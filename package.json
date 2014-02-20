@@ -11,8 +11,5 @@
         "email": "mail@tenorok.ru",
         "homepage": "http://tenorok.ru"
     },
-    "license": "MIT",
-    "dependencies": {
-        "gulp": "~3.5.2"
-    }
+    "license": "MIT"
 }
