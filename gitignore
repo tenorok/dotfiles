@@ -1,0 +1,28 @@
+# OSX
+.DS_Store
+._*
+.Trashes
+
+# SVN
+*.svn/
+
+# Mercurial
+.hgignore
+
+# PyCharm/WebStorm/Etc
+.idea/
+.iml
+
+# vim
+.*.s[a-w][a-z]
+*~
+.netrwhist
+
+# Node.js
+npm-debug.log
+
+# Python
+*.py[cod]
+
+# Sublime
+*.sublime-workspace
