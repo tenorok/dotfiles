@@ -1,0 +1,5 @@
+# domen.com
+    Host domen.com
+    HostName domen.com
+    User root
+    IdentityFile ~/.ssh/id_rsa
