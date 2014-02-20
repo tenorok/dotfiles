@@ -1,6 +1,9 @@
 [user]
     name = tenorok
     email = mail@tenorok.ru
+[core]
+    editor = subl -n -w
+    excludesfile = ~/.gitignore
 [color]
     branch = auto
     diff = auto
@@ -18,8 +21,6 @@
     added = yellow
     changed = green
     untracked = cyan
-[core]
-    editor = subl -n -w
 [alias]
     cp = cherry-pick
     st = status -s
