@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: brew subl git bash ssh
 
 all: brew subl git bash ssh
 
