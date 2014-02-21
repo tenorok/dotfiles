@@ -1,9 +1,10 @@
 export TERM=xterm-color
+export LANG=ru_RU.UTF-8
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacdx
 
 export EDITOR='subl -w'
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -35,3 +36,5 @@ function makedmg() {
 }
 
 source ~/.git-completion.bash
+
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
