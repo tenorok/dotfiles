@@ -19,15 +19,12 @@ PS1="\$(date +%H:%M) $YELLOW\w$GREEN\$(parse_git_branch)$GRAY \$ "
 alias l='ls -lAhG'
 
 alias edital='open -a "Sublime Text" ~/.bash_profile'
-alias saveal='source ~/.bash_profile
-echo ".bash_profile has started"'
+alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
 
 alias edithosts='open -a "Sublime Text" /private/etc/hosts'
 
-alias showall='defaults write com.apple.finder AppleShowAllFiles TRUE
-killall Finder'
-alias hideall='defaults write com.apple.finder AppleShowAllFiles FALSE
-killall Finder'
+alias showall='defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder'
+alias hideall='defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder'
 
 alias st2sn='open "/Users/tenor/Library/Application Support/Sublime Text/Packages/User/"'
 

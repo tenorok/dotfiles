@@ -1,6 +1,8 @@
 [user]
     name = tenorok
     email = mail@tenorok.ru
+[github]
+    user = tenorok
 [core]
     editor = subl -n -w
     excludesfile = ~/.gitignore
@@ -21,6 +23,8 @@
     added = yellow
     changed = green
     untracked = cyan
+[merge]
+    ff = no
 [alias]
     cp = cherry-pick
     st = status -s
@@ -28,7 +32,13 @@
     ci = commit
     co = checkout
     br = branch
+    di = diff
     dc = diff --cached
+    ls = ls-files
     unstage = reset HEAD --
     last = log -1 HEAD
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+    lsi = !git ls-files -v | grep '^h'
     lg  = log --oneline --graph --decorate --all
+    hi = log --oneline --graph --decorate --all --simplify-by-decoration
