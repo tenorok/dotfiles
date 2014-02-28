@@ -37,6 +37,8 @@
     ls = ls-files
     unstage = reset HEAD --
     last = log -1 HEAD
+    back = reset --soft HEAD^
+    cleanup = remote prune origin
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
     lsi = !git ls-files -v | grep '^h'
