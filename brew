@@ -1,0 +1,31 @@
+#!/bin/bash
+
+sudo -v # ask for password only at the beginning
+
+brew update
+brew upgrade
+
+brew install git
+brew install node
+brew install wget
+
+brew cask install caskroom/versions/sublime-text3
+brew cask install webstorm
+brew cask install iterm2
+brew cask install gitx
+brew cask install mou
+brew cask install alfred
+brew cask install transmit
+
+brew cask install google-chrome
+brew cask install firefox
+
+brew cask install adium
+brew cask install skype
+brew cask install teamviewer
+brew cask install dropbox
+brew cask install evernote
+brew cask install transmission
+brew cask install vlc
+
+brew cleanup
