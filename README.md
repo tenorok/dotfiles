@@ -4,7 +4,7 @@
 
 ## Установка
 
-Перед установкой необходимо наличие [OS X Developer Tools](https://developer.apple.com/technologies/tools/) и [Sublime Text 3](http://www.sublimetext.com/3).
+Перед установкой необходимо наличие [OS X Developer Tools](https://developer.apple.com/technologies/tools/).
 
 ```bash
 make
