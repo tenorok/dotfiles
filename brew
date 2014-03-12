@@ -27,5 +27,6 @@ brew cask install dropbox
 brew cask install evernote
 brew cask install transmission
 brew cask install vlc
+brew cask install appzapper
 
 brew cleanup
