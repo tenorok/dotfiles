@@ -1,0 +1,14 @@
+{
+    "font_size": 12,
+    "indent_guide_options": [
+        "draw_normal",
+        "draw_active"
+    ],
+    "open_files_in_new_window": false,
+    "rulers": [120],
+    "scroll_past_end": true,
+    "show_full_path": true,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "caret_style": "wide"
+}
