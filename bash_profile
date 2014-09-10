@@ -7,7 +7,7 @@ export EDITOR='subl -w'
 export PATH=./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
 RED="\[\033[0;31m\]"
@@ -15,7 +15,7 @@ YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 GRAY="\[\e[0m\]"
 
-PS1="\$(date +%H:%M) $YELLOW\w$GREEN\$(parse_git_branch)$GRAY \$ "
+PS1="$YELLOW\w$GREEN\$(parse_git_branch)$GRAY › "
 
 alias l='ls -lAhG'
 
