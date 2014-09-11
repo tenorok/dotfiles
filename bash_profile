@@ -17,13 +17,25 @@ function git_color {
   local git_status="$(git status 2> /dev/null)"
 
   if [[ ! $git_status =~ "working directory clean" ]]; then
-    echo -e $PURPLE
-  elif [[ $git_status =~ "Your branch is ahead of" ]]; then
-    echo -e $CYAN
+    echo -e $PURPLE # Dirty state
   elif [[ $git_status =~ "nothing to commit" ]]; then
-    echo -e $GREEN
+    echo -e $GREEN # Clean state
   else
     echo -e $GRAY
+  fi
+}
+
+function git_state {
+  local commit_local=$(git rev-parse @)
+  local commit_remote=$(git rev-parse @{u})
+  local commit_base=$(git merge-base @ @{u})
+
+  if [ $commit_local = $commit_remote ]; then
+      echo ""
+  elif [ $commit_local = $commit_base ]; then
+      echo " ↓" # Need to pull
+  elif [ $commit_remote = $commit_base ]; then
+      echo " ↑" # Need to push
   fi
 }
 
@@ -42,7 +54,7 @@ function git_branch {
 }
 
 PS1="\[$YELLOW\]\w"
-PS1+="\[\$(git_color)\] \$(git_branch)"
+PS1+="\[\$(git_color)\] \$(git_branch)\$(git_state)"
 PS1+="\[$GRAY\] › "
 export PS1
 
