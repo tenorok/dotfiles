@@ -26,16 +26,18 @@ function git_color {
 }
 
 function git_state {
-  local commit_local=$(git rev-parse @)
-  local commit_remote=$(git rev-parse @{u})
-  local commit_base=$(git merge-base @ @{u})
+  local commit_local=$(git rev-parse @ 2> /dev/null)
+  local commit_remote=$(git rev-parse @{u} 2> /dev/null)
+  local commit_base=$(git merge-base @ @{u} 2> /dev/null)
 
-  if [ $commit_local = $commit_remote ]; then
-      echo ""
-  elif [ $commit_local = $commit_base ]; then
-      echo " ↓" # Need to pull
-  elif [ $commit_remote = $commit_base ]; then
-      echo " ↑" # Need to push
+  if [ ${#commit_local} -gt 0 ] && [ ${#commit_remote} -gt 0 ] && [ $commit_local = $commit_remote ]; then
+    echo ""
+  elif [ ${#commit_local} -gt 0 ] && [ ${#commit_base} -gt 0 ] && [ $commit_local = $commit_base ]; then
+    echo " ↻" # Need to rebase
+  elif [ ${#commit_remote} -gt 0 ] && [ ${#commit_base} -gt 0 ] && [ $commit_remote = $commit_base ]; then
+    echo " ↑" # Need to push
+  elif [ ${#commit_local} -gt 0 ] && [ ${#commit_remote} -gt 0 ] && [ ${#commit_base} -gt 0 ]; then
+    echo " ⇅" # Crash history (Need to force or pull)
   fi
 }
 
@@ -59,6 +61,14 @@ PS1+="\[$GRAY\] › "
 export PS1
 
 alias l='ls -lAhG'
+
+function gitst {
+  if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1) ]; then
+    echo -e $GREEN"Up to date"
+  else
+    echo -e $RED"Not up to date"
+  fi
+}
 
 alias edital='open -a "Sublime Text" ~/.bash_profile'
 alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
