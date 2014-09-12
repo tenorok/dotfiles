@@ -30,13 +30,15 @@ function git_state {
   local commit_remote=$(git rev-parse @{u} 2> /dev/null)
   local commit_base=$(git merge-base @ @{u} 2> /dev/null)
 
-  if [ ${#commit_local} -gt 0 ] && [ ${#commit_remote} -gt 0 ] && [ $commit_local = $commit_remote ]; then
+  if [[ ${#commit_local} -gt 0 && ${#commit_remote} -gt 0 && $commit_local = $commit_remote ]]; then
     echo ""
-  elif [ ${#commit_local} -gt 0 ] && [ ${#commit_base} -gt 0 ] && [ $commit_local = $commit_base ]; then
+  elif [[ ${#commit_local} -gt 0 && ${#commit_base} -gt 0 && $commit_local = $commit_base ]]; then
     echo " ↻" # Need to rebase
-  elif [ ${#commit_remote} -gt 0 ] && [ ${#commit_base} -gt 0 ] && [ $commit_remote = $commit_base ]; then
+  elif [[ ${#commit_local} -gt 0 && -z $commit_remote ]]; then
+    echo " ⛢" # Untracked branch
+  elif [[ ${#commit_remote} -gt 0 && ${#commit_base} -gt 0 && $commit_remote = $commit_base ]]; then
     echo " ↑" # Need to push
-  elif [ ${#commit_local} -gt 0 ] && [ ${#commit_remote} -gt 0 ] && [ ${#commit_base} -gt 0 ]; then
+  elif [[ ${#commit_local} -gt 0 && ${#commit_remote} -gt 0 && ${#commit_base} -gt 0 ]]; then
     echo " ⇅" # Crash history (Need to force push or pull)
   fi
 }
