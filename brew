@@ -29,5 +29,6 @@ brew cask install transmission
 brew cask install vlc
 brew cask install appzapper
 brew cask install imageoptim
+brew cask install atom
 
 brew cleanup
