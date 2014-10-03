@@ -10,6 +10,7 @@ brew install node
 brew install wget
 
 brew cask install caskroom/versions/sublime-text3
+brew cask install atom
 brew cask install webstorm
 brew cask install iterm2
 brew cask install gitx
@@ -17,7 +18,7 @@ brew cask install mou
 brew cask install alfred
 brew cask install transmit
 
-brew cask install google-chrome
+brew cask install chromium
 brew cask install firefox
 
 brew cask install adium
@@ -29,6 +30,5 @@ brew cask install transmission
 brew cask install vlc
 brew cask install appzapper
 brew cask install imageoptim
-brew cask install atom
 
 brew cleanup
