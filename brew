@@ -5,6 +5,10 @@ sudo -v # ask for password only at the beginning
 brew update
 brew upgrade
 
+brew install bash
+echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/bash
+
 brew install git
 brew install node
 brew install wget
