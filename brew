@@ -22,12 +22,14 @@ brew cask install mou
 brew cask install alfred
 brew cask install transmit
 
+brew cask install yandex
 brew cask install chromium
 brew cask install firefox
 
 brew cask install adium
 brew cask install skype
 brew cask install teamviewer
+brew cask install yandexdisk
 brew cask install dropbox
 brew cask install evernote
 brew cask install transmission
