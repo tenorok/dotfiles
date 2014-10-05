@@ -21,5 +21,10 @@ bash:
 	cp bash_profile ~/.bash_profile
 
 ssh:
-	mkdir ~/.ssh
-	cp -n ssh/config ~/.ssh/config
+	[ -d ~/.ssh ] || mkdir ~/.ssh
+	[ -f ~/.ssh/config ] || cp -n ssh/config ~/.ssh/config
+	sudo ssh-keygen -t rsa -C "mail@tenorok.ru" -N "" -f ~/.ssh/id_rsa
+	eval "$(ssh-agent -s)"
+	sudo ssh-add ~/.ssh/id_rsa
+	pbcopy < ~/.ssh/id_rsa.pub
+	echo -e "\033[0;32mPaste key from your clipboard to https://github.com/settings/ssh"
