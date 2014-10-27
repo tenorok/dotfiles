@@ -69,6 +69,8 @@ alias edithosts='open -a "Sublime Text" /private/etc/hosts'
 
 alias showall='defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder'
 alias hideall='defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder'
+alias getchmod='stat -f "%OLp"'
+alias count='ls | wc -l'
 
 function makedmg() {
     DIR=$1;
