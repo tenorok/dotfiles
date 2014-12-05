@@ -12,6 +12,8 @@ chsh -s /usr/local/bin/bash
 brew install git
 brew install node
 brew install wget
+brew install ondir
+brew install hub
 
 brew cask install caskroom/versions/sublime-text3
 brew cask install atom

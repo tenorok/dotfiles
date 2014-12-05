@@ -1,8 +1,6 @@
 [user]
     name = tenorok
     email = mail@tenorok.ru
-[github]
-    user = tenorok
 [core]
     editor = subl -n -w
     excludesfile = ~/.gitignore

@@ -16,6 +16,7 @@ git:
 	cp git-completion.bash ~/.git-completion.bash
 	cp gitconfig ~/.gitconfig
 	cp gitignore ~/.gitignore
+	cp ondirrc ~/.ondirrc
 
 bash:
 	cp bash_profile ~/.bash_profile

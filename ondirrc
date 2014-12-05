@@ -1,0 +1,11 @@
+enter ~/yandex/*
+   export GIT_AUTHOR_NAME=tenorok
+   export GIT_AUTHOR_EMAIL=tenorok@yandex-team.ru
+   export GIT_COMMITTER_NAME=Artem Kurbatov
+   export GIT_COMMITTER_EMAIL=tenorok@yandex-team.ru
+   export GITHUB_HOST=github.yandex-team.ru
+   echo -e 'Git switched to \033[0;31mYandex'
+
+leave ~/yandex/*
+   gitDefault
+   echo -e 'Git switched to \033[0;32mdefault'

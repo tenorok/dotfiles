@@ -62,6 +62,29 @@ function gitst {
   fi
 }
 
+# ondir configuration
+cd() {
+  builtin cd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+}
+pushd() {
+  builtin pushd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+}
+popd() {
+  builtin popd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+}
+eval "`ondir /`"
+
+# git + hub
+eval "$(hub alias -s)"
+function gitDefault {
+  export GIT_AUTHOR_NAME=tenorok
+  export GIT_AUTHOR_EMAIL=mail@tenorok.ru
+  export GIT_COMMITTER_NAME=Artem Kurbatov
+  export GIT_COMMITTER_EMAIL=mail@tenorok.ru
+  export GITHUB_HOST=github.com
+}
+gitDefault
+
 alias edital='open -a "Sublime Text" ~/.bash_profile'
 alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
 
