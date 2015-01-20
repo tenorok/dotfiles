@@ -10,5 +10,6 @@
     "show_full_path": true,
     "tab_size": 4,
     "translate_tabs_to_spaces": true,
-    "caret_style": "wide"
+    "caret_style": "wide",
+    "color_scheme": "Packages/User/frontend-light/Grey.tmTheme"
 }

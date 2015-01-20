@@ -11,6 +11,7 @@ brew:
 
 subl:
 	cp Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+	git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light
 
 git:
 	cp git-completion.bash ~/.git-completion.bash
