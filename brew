@@ -22,7 +22,6 @@ brew cask install iterm2
 brew cask install gitx
 brew cask install xscope
 brew cask install mou
-brew cask install alfred
 brew cask install transmit
 
 brew cask install yandex
