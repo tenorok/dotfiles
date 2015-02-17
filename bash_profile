@@ -1,3 +1,4 @@
+export PROFILE=~/.bash_profile
 export TERM=xterm-color
 export LANG=ru_RU.UTF-8
 export CLICOLOR=1
@@ -90,6 +91,10 @@ function NPMDefault {
   npm config set registry https://registry.npmjs.org/
 }
 NPMDefault
+
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 alias edital='open -a "Sublime Text" ~/.bash_profile'
 alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'

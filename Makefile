@@ -1,6 +1,6 @@
-.PHONY: brew subl git bash ssh
+.PHONY: brew subl git env bash ssh
 
-all: brew-install brew subl git bash ssh
+all: brew-install brew subl git env bash ssh
 
 brew-install:
 	curl -L github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /usr/local
@@ -17,7 +17,10 @@ git:
 	cp git-completion.bash ~/.git-completion.bash
 	cp gitconfig ~/.gitconfig
 	cp gitignore ~/.gitignore
+
+env:
 	cp ondirrc ~/.ondirrc
+	mkdir ~/.nvm
 
 bash:
 	cp bash_profile ~/.bash_profile
