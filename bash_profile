@@ -85,6 +85,12 @@ function gitDefault {
 }
 gitDefault
 
+# NPM
+function NPMDefault {
+  npm config set registry https://registry.npmjs.org/
+}
+NPMDefault
+
 alias edital='open -a "Sublime Text" ~/.bash_profile'
 alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
 
