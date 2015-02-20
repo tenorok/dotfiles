@@ -40,5 +40,7 @@ brew cask install appzapper
 brew cask install imageoptim
 brew cask install spectacle
 brew cask install apptivate
+brew cask install clipmenu-dev
+brew cask install beardedspice
 
 brew cleanup
