@@ -1,6 +1,10 @@
 export PROFILE=~/.bash_profile
-export TERM=xterm-color
+
 export LANG=ru_RU.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export TERM=xterm-color
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacdx
 
