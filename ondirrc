@@ -4,7 +4,7 @@ enter ~/yandex/*
    export GIT_COMMITTER_NAME=Artem Kurbatov
    export GIT_COMMITTER_EMAIL=tenorok@yandex-team.ru
    export GITHUB_HOST=github.yandex-team.ru
-   npm config set registry https://npm.yandex-team.ru
+   export NPM_CONFIG_REGISTRY=http://npm.yandex-team.ru
    echo -e 'Git and NPM switched to \033[0;31mYandex'
 
 leave ~/yandex/*
