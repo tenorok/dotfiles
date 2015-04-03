@@ -25,6 +25,9 @@ env:
 bash:
 	cp bash_profile ~/.bash_profile
 
+bash-osx:
+	cp bash_osx ~/.bash_osx
+
 ssh:
 	[ -d ~/.ssh ] || mkdir ~/.ssh
 	[ -f ~/.ssh/config ] || cp -n ssh/config ~/.ssh/config

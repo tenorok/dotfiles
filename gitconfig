@@ -2,7 +2,7 @@
     name = tenorok
     email = mail@tenorok.ru
 [core]
-    editor = subl -n -w
+    editor = vim
     excludesfile = ~/.gitignore
 [color]
     branch = auto

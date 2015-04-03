@@ -67,20 +67,7 @@ function gitst {
   fi
 }
 
-# ondir configuration
-cd() {
-  builtin cd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-}
-pushd() {
-  builtin pushd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-}
-popd() {
-  builtin popd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-}
-eval "`ondir /`"
-
-# git + hub
-eval "$(hub alias -s)"
+# git
 function gitDefault {
   export GIT_AUTHOR_NAME=tenorok
   export GIT_AUTHOR_EMAIL=mail@tenorok.ru
@@ -90,15 +77,15 @@ function gitDefault {
 }
 gitDefault
 
+# NVM
+export NVM_DIR=~/.nvm
+[ -f ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh
+
 # NPM
 function NPMDefault {
   npm config set registry https://registry.npmjs.org/
 }
 NPMDefault
-
-# NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 alias edital='open -a "Sublime Text" ~/.bash_profile'
 alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
@@ -118,4 +105,5 @@ function makedmg() {
 
 source ~/.git-completion.bash
 
+[ -f ~/.bash_osx ] && source ~/.bash_osx
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
