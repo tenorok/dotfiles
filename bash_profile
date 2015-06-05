@@ -98,6 +98,8 @@ alias hideall='defaults write com.apple.finder AppleShowAllFiles FALSE && killal
 alias getchmod='stat -f "%OLp"'
 alias count='ls | wc -l'
 
+alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
+
 function makedmg() {
     DIR=$1;
     VOL=$2;
