@@ -58,7 +58,7 @@ PS1+="\[$GRAY\] › "
 export PS1
 
 alias l='ls -lAhG'
-alias cat='ccat --bg dark'
+alias cat='ccat --bg=dark'
 
 function gitst {
   if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1) ]; then
