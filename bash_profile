@@ -9,7 +9,8 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacdx
 
 export EDITOR='subl -w'
-export PATH=./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:bin
+export NODE_PATH=./node_modules:$NODE_PATH
 
 RED="\033[0;31m"
 PURPLE="\033[0;35m"
