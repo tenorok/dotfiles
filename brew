@@ -15,6 +15,7 @@ brew install wget
 brew install ondir
 brew install hub
 brew install ccat
+brew install ag
 
 brew cask install caskroom/versions/sublime-text3
 brew cask install atom
