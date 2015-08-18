@@ -23,6 +23,8 @@
     untracked = cyan
 [merge]
     ff = no
+[branch]
+    autosetuprebase = always
 [alias]
     cp = cherry-pick
     st = status -s
