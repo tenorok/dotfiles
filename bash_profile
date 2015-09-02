@@ -53,7 +53,12 @@ function git_branch {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
-PS1="\[$YELLOW\]\w"
+PS1=""
+# Если на сервере.
+if [[ $(git config core.editor) = vim ]]; then
+  PS1+="\[$CYAN\]\h "
+fi
+PS1+="\[$YELLOW\]\w"
 PS1+="\[\$(git_color)\]\$(git_branch)\$(git_state)"
 PS1+="\[$GRAY\] › "
 export PS1
