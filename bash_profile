@@ -59,7 +59,7 @@ PS1+="\[$GRAY\] › "
 export PS1
 
 alias l='ls -lAhG'
-alias cat='ccat --bg=dark'
+alias cat='ccat --bg dark'
 
 function gitst {
   if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1) ]; then
@@ -105,6 +105,22 @@ function makedmg() {
     DIR=$1;
     VOL=$2;
     hdiutil create $DIR -type SPARSEBUNDLE -size 5000m -fs HFS+J -volname $VOL -encryption
+}
+
+jailmount()
+{
+    JAIL=${1}
+    FOLDER=${2:-"/home/$USER"}
+    echo -e "\033[33m===> MOUNT JAIL: \033[31m$JAIL \033[0m"
+    mkdir -p /mount/$JAIL
+    jailunmount $JAIL
+    sshfs $USER@$JAIL:$FOLDER /mount/$JAIL -oauto_cache,reconnect,volname=$1
+}
+
+jailunmount()
+{
+    JAIL=${1}
+    umount /mount/$1 >/dev/null
 }
 
 source ~/.git-completion.bash

@@ -11,5 +11,41 @@
     "tab_size": 4,
     "translate_tabs_to_spaces": true,
     "caret_style": "wide",
-    "color_scheme": "Packages/User/frontend-light/Grey.tmTheme"
+    "color_scheme": "Packages/User/frontend-light/Grey.tmTheme",
+    "atomic_save": false,
+    "ensure_newline_at_eof_on_save": true,
+    "trim_trailing_white_space_on_save": true,
+
+    "folder_exclude_patterns": [
+        ".git",
+        ".githooks",
+        ".enb/tmp",
+        "contribs/images-viewer/node_modules",
+        "images/.tanker",
+        "images/desktop/pages",
+        "images/desktop/pages-desktop",
+        "images/node_modules",
+        "images/touch-phone/pages",
+        "images/touch-phone/pages-touch",
+        "node_modules",
+        "report",
+        "sakhalin/.tanker",
+        "sakhalin/node_modules",
+        "sakhalin/node_modules/jshint/src/platforms",
+        "static",
+        "video/.tanker",
+        "video/desktop/pages",
+        "video/desktop/pages-desktop",
+        "video/node_modules",
+        "video/touch-pad/pages",
+        "video/touch-pad/pages-touch-pad",
+        "video/touch-phone/pages",
+        "video/touch-phone/pages-touch"
+    ],
+    "index_exclude_patterns": [
+        "*.log",
+        "libs",
+        "gemini",
+        "gemini-report"
+    ],
 }
