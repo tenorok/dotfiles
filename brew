@@ -18,32 +18,32 @@ brew install git \
     ag
 
 brew cask install caskroom/versions/sublime-text3 \
-	atom \
-	webstorm \
-	iterm2 \
-	gitx \
-	xscope \
-	mou \
-	transmit
+    atom \
+    webstorm \
+    iterm2 \
+    gitx \
+    xscope \
+    mou \
+    transmit
 
 brew cask install  yandex \
-	chromium \
-	firefox
+    chromium \
+    firefox
 
 brew cask install adium \
-	skype \
-	teamviewer \
-	yandexdisk \
-	dropbox \
-	evernote \
-	transmission \
-	vlc \
-	appzapper \
-	imageoptim \
-	imagealpha \
-	spectacle \
-	apptivate \
-	clipmenu-dev \
-	beardedspice
+    skype \
+    teamviewer \
+    yandexdisk \
+    dropbox \
+    evernote \
+    transmission \
+    vlc \
+    appzapper \
+    imageoptim \
+    imagealpha \
+    spectacle \
+    apptivate \
+    clipmenu-dev \
+    beardedspice
 
 brew cleanup
