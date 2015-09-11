@@ -9,41 +9,41 @@ brew install bash
 echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/bash
 
-brew install git
-brew install nvm
-brew install wget
-brew install ondir
-brew install hub
-brew install ccat
-brew install ag
+brew install git \
+    nvm \
+    wget \
+    ondir \
+    hub \
+    ccat \
+    ag
 
-brew cask install caskroom/versions/sublime-text3
-brew cask install atom
-brew cask install webstorm
-brew cask install iterm2
-brew cask install gitx
-brew cask install xscope
-brew cask install mou
-brew cask install transmit
+brew cask install caskroom/versions/sublime-text3 \
+    atom \
+    webstorm \
+    iterm2 \
+    gitx \
+    xscope \
+    mou \
+    transmit
 
-brew cask install yandex
-brew cask install chromium
-brew cask install firefox
+brew cask install  yandex \
+    chromium \
+    firefox
 
-brew cask install adium
-brew cask install skype
-brew cask install teamviewer
-brew cask install yandexdisk
-brew cask install dropbox
-brew cask install evernote
-brew cask install transmission
-brew cask install vlc
-brew cask install appzapper
-brew cask install imageoptim
-brew cask install imagealpha
-brew cask install spectacle
-brew cask install apptivate
-brew cask install clipmenu-dev
-brew cask install beardedspice
+brew cask install adium \
+    skype \
+    teamviewer \
+    yandexdisk \
+    dropbox \
+    evernote \
+    transmission \
+    vlc \
+    appzapper \
+    imageoptim \
+    imagealpha \
+    spectacle \
+    apptivate \
+    clipmenu-dev \
+    beardedspice
 
 brew cleanup
