@@ -24,6 +24,7 @@ env:
 
 bash:
 	cp bash_profile ~/.bash_profile
+	cp tmux.conf ~/.tmux.conf
 
 bash-osx:
 	cp bash_osx ~/.bash_osx

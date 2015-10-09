@@ -128,6 +128,24 @@ jailunmount()
     umount /mount/$1 >/dev/null
 }
 
+# Tmux
+alias tm="tmux -2 -S /tmp/tm-`whoami`"
+alias tms="tm a -t"
+
+# Tmux session alias for pair-programming
+function tm-pair
+{
+    if [ ${2} ]; then
+        tmux -2 -S /tmp/tm-${1} attach -t ${2}
+    elif [ ${1} ]; then
+        tmux -2 -S /tmp/tm-`whoami` new -s ${1}
+    else
+        echo 'Usage:'
+        echo 'tm-pair feature_name # Create session'
+        echo 'tm-pair user_name feature_name # Attach to session'
+    fi
+}
+
 source ~/.git-completion.bash
 
 [ -f ~/.bash_osx ] && source ~/.bash_osx
