@@ -10,7 +10,6 @@ export LSCOLORS=dxfxcxdxbxegedabagacdx
 
 export EDITOR='subl -w'
 export PATH=./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:bin
-export NODE_PATH=./node_modules:$NODE_PATH
 
 RED="\033[0;31m"
 PURPLE="\033[0;35m"
@@ -93,6 +92,8 @@ function NPMDefault {
   npm config set registry https://registry.npmjs.org/
 }
 NPMDefault
+
+export NODE_PATH=./node_modules:$(npm root -g)
 
 alias edital='open -a "Sublime Text" ~/.bash_profile'
 alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
