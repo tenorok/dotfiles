@@ -9,7 +9,13 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacdx
 
 export EDITOR='subl -w'
-export PATH=./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:bin
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:bin
+
+source ~/.git-completion.bash
+
+[ -f ~/.bash_osx ] && source ~/.bash_osx
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 RED="\033[0;31m"
 PURPLE="\033[0;35m"
@@ -63,7 +69,7 @@ PS1+="\[$GRAY\] › "
 export PS1
 
 alias l='ls -lAhG'
-alias cat='ccat --bg dark'
+alias cat='ccat --bg=dark'
 
 function gitst {
   if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1) ]; then
@@ -94,6 +100,9 @@ function NPMDefault {
 NPMDefault
 
 export NODE_PATH=./node_modules:$(npm root -g)
+
+# Docker
+eval "$(docker-machine env default)"
 
 alias edital='open -a "Sublime Text" ~/.bash_profile'
 alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
@@ -146,8 +155,3 @@ function tm-pair
         echo 'tm-pair user_name feature_name # Attach to session'
     fi
 }
-
-source ~/.git-completion.bash
-
-[ -f ~/.bash_osx ] && source ~/.bash_osx
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
