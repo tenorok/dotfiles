@@ -2,6 +2,8 @@
 
 all: brew-install brew subl git env bash ssh
 
+pwd = $(shell pwd)
+
 brew-install:
 	curl -L github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /usr/local
 	brew install phinze/cask/brew-cask
@@ -14,20 +16,20 @@ subl:
 	git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light
 
 git:
-	ln -s $(pwd)/git-completion.bash ~/.git-completion.bash
-	ln -s $(pwd)/gitconfig ~/.gitconfig
-	ln -s $(pwd)/gitignore ~/.gitignore
+	ln -s ${pwd}/git-completion.bash ~/.git-completion.bash
+	ln -s ${pwd}/gitconfig ~/.gitconfig
+	ln -s ${pwd}/gitignore ~/.gitignore
 
 env:
-	ln -s $(pwd)/ondirrc ~/.ondirrc
+	ln -s ${pwd}/ondirrc ~/.ondirrc
 	mkdir ~/.nvm
 
 bash:
-	ln -s $(pwd)/bash_profile ~/.bash_profile
-	ln -s $(pwd)/tmux.conf ~/.tmux.conf
+	ln -s ${pwd}/bash_profile ~/.bash_profile
+	ln -s ${pwd}/tmux.conf ~/.tmux.conf
 
 bash-osx:
-	ln -s $(pwd)/bash_osx ~/.bash_osx
+	ln -s ${pwd}/bash_osx ~/.bash_osx
 
 ssh:
 	[ -d ~/.ssh ] || mkdir ~/.ssh
