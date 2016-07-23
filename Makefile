@@ -26,7 +26,6 @@ env:
 
 bash:
 	ln -s ${pwd}/bash_profile ~/.bash_profile
-	ln -s ${pwd}/tmux.conf ~/.tmux.conf
 
 bash-osx:
 	ln -s ${pwd}/bash_osx ~/.bash_osx
