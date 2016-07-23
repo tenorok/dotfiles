@@ -15,7 +15,8 @@ brew install git \
     ondir \
     hub \
     ccat \
-    ag
+    ag \
+    tree
 
 brew cask install caskroom/versions/sublime-text3 \
     atom \
