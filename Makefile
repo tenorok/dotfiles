@@ -29,6 +29,7 @@ bash:
 
 bash-osx:
 	ln -s ${pwd}/bash_osx ~/.bash_osx
+	curl -fsSL https://raw.githubusercontent.com/rgcr/m-cli/master/install.sh | sh
 
 ssh:
 	[ -d ~/.ssh ] || mkdir ~/.ssh
