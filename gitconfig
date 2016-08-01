@@ -48,8 +48,9 @@
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
     lsi = !git ls-files -v | grep '^h'
-    lg  = log --oneline --graph --decorate --all
-    hi = log --oneline --graph --decorate --all --simplify-by-decoration
+    lg  = log --oneline --graph --decorate
+    lga  = log --oneline --graph --decorate --all
+    lgp = log --oneline --graph --decorate --all --simplify-by-decoration
 [filter "lfs"]
     required = true
     clean = git-lfs clean %f
@@ -57,3 +58,5 @@
 [lfs]
     batch = true
     concurrenttransfers = 15
+[push]
+	default = simple
