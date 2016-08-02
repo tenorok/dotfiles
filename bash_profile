@@ -104,9 +104,6 @@ NPMDefault
 
 export NODE_PATH=./node_modules:$(npm root -g)
 
-# Docker
-eval "$(docker-machine env default)"
-
 alias edital='open -a "Sublime Text" ~/.bash_profile'
 alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
 
