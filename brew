@@ -11,6 +11,7 @@ chsh -s /usr/local/bin/bash
 
 brew install git \
     nvm \
+    go \
     wget \
     ondir \
     hub \
@@ -18,7 +19,7 @@ brew install git \
     ag \
     tree
 
-brew cask install caskroom/versions/sublime-text3 \
+brew cask install sublime-text \
     atom \
     webstorm \
     iterm2 \
@@ -44,7 +45,6 @@ brew cask install adium \
     imagealpha \
     spectacle \
     apptivate \
-    clipmenu-dev \
-    beardedspice
+    clipmenu
 
 brew cleanup
