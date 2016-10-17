@@ -30,7 +30,7 @@ GRAY="\e[0m"
 function git_color {
   local git_status="$(git status 2> /dev/null)"
 
-  if [[ ! $git_status =~ "working directory clean" ]]; then
+  if [[ ! $git_status =~ "working tree clean" ]]; then
     echo -e $PURPLE # Dirty state
   elif [[ $git_status =~ "nothing to commit" ]]; then
     echo -e $GREEN # Clean state
