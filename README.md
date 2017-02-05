@@ -9,3 +9,15 @@
 ```bash
 make
 ```
+
+## Atom
+
+Сохранить установленные плагины в файл:
+```
+apm list --installed --bare > atom/packages.txt
+```
+
+Установить плагины из файла:
+```
+apm install --packages-file atom/packages.txt
+```

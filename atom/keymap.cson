@@ -1,0 +1,24 @@
+'.platform-darwin':
+  'cmd-§': 'tree-view:toggle-focus'
+
+'.platform-darwin atom-text-editor':
+  'cmd-e': 'unset!'
+  'shift-cmd-enter': 'navigate:forward-new'
+'atom-workspace':
+  'cmd-e': 'recent-files-fuzzy-finder:toggle-finder'
+  'cmd-[': 'last-cursor-position:previous'
+  'cmd-]': 'last-cursor-position:next'
+
+'atom-text-editor':
+  'cmd-backspace': 'editor:delete-line'
+
+'atom-text-editor:not([mini])':
+  'ctrl-shift-C': 'unset!'
+  'shift-cmd-c': 'editor:copy-path'
+
+'.platform-darwin atom-text-editor:not(.mini)':
+  'cmd-enter': 'goto-definition:go'
+
+'atom-workspace atom-text-editor:not([mini])':
+  'cmd-[': 'unset!'
+  'cmd-]': 'unset!'
