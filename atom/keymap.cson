@@ -1,6 +1,9 @@
 '.platform-darwin':
   'cmd-§': 'tree-view:toggle-focus'
 
+'.platform-darwin atom-workspace':
+    'shift-cmd-o': 'advanced-open-file:toggle'
+
 '.platform-darwin atom-text-editor':
   'cmd-e': 'unset!'
   'shift-cmd-enter': 'navigate:forward-new'
@@ -15,6 +18,7 @@
 'atom-text-editor:not([mini])':
   'ctrl-shift-C': 'unset!'
   'shift-cmd-c': 'editor:copy-path'
+  'ctrl-c': 'copy-path:copy-project-relative-dirname'
 
 '.platform-darwin atom-text-editor:not(.mini)':
   'cmd-enter': 'goto-definition:go'
