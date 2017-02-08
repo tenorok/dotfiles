@@ -30,8 +30,7 @@
     tabLength: 4
   "exception-reporting":
     userId: "92725888-6c5d-f2ec-9da2-ec1dadf0b9c5"
-  "git-blame":
-    customCommitUrlTemplateString: "https://github.yandex-team.ru/<%- project %>/<%- repo %>/commit/<%- revision %>"
+  "git-blame": {}
   "local-config":
     applyOnActivation: true
   metrics:
@@ -55,6 +54,7 @@
     addNewTabsAtEnd: true
     enableVcsColoring: true
   "tree-view":
+    hideIgnoredNames: true
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
