@@ -26,6 +26,7 @@
   editor:
     fontFamily: "Consolas"
     fontSize: 13
+    preferredLineLength: 120
     scrollPastEnd: true
     tabLength: 4
   "exception-reporting":
