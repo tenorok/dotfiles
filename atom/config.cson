@@ -19,9 +19,9 @@
       "atom-light-syntax"
     ]
   "custom-title":
-    template: "<%= relativeFilePath %> <% if (gitHead) { %> › <%= gitHead %><% } %>"
+    template: "<%= relativeFilePath %>"
   docblockr:
-    per_section_indent: true
+    align_tags: "no"
     return_tag: "@returns"
   editor:
     fontFamily: "Consolas"
@@ -32,6 +32,8 @@
   "exception-reporting":
     userId: "92725888-6c5d-f2ec-9da2-ec1dadf0b9c5"
   "git-blame": {}
+  "git-diff":
+    showIconsInEditorGutter: true
   "local-config":
     applyOnActivation: true
   metrics:

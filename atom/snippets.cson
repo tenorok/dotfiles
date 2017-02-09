@@ -1,0 +1,4 @@
+'.source.js':
+    'function-expression':
+        'prefix': 'f'
+        'body': 'function($1) \\{$0\\}'
