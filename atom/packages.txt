@@ -17,3 +17,4 @@ minimap-git-diff@4.3.1
 minimap-highlight-selected@4.5.0
 navigate@0.1.17
 recent-files-fuzzy-finder@0.3.0
+tree-view-copy-relative-path@1.0.1

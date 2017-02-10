@@ -1,19 +1,14 @@
-'.platform-darwin':
-  'cmd-§': 'tree-view:toggle-focus'
-
-'.platform-darwin atom-workspace':
-    'shift-cmd-o': 'advanced-open-file:toggle'
-
-'.platform-darwin atom-text-editor':
-  'cmd-e': 'unset!'
-  'shift-cmd-enter': 'navigate:forward-new'
 'atom-workspace':
   'cmd-e': 'recent-files-fuzzy-finder:toggle-finder'
   'cmd-[': 'last-cursor-position:previous'
   'cmd-]': 'last-cursor-position:next'
+  'shift-cmd-o': 'advanced-open-file:toggle'
+  'cmd-§': 'tree-view:toggle-focus'
 
 'atom-text-editor':
   'cmd-backspace': 'editor:delete-line'
+  'cmd-e': 'unset!'
+  'shift-cmd-enter': 'navigate:forward-new'
 
 'atom-text-editor:not([mini])':
   'ctrl-shift-C': 'unset!'
