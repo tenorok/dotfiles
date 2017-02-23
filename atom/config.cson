@@ -1,5 +1,8 @@
 "*":
   core:
+    disabledPackages: [
+      "spell-check"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -40,6 +43,7 @@
     userId: "b39be8188d2876677efaf221c811ac155b8e7cd3"
   minimap:
     absoluteMode: true
+    displayCodeHighlights: false
     independentMinimapScroll: true
     moveCursorOnMinimapClick: true
     plugins:

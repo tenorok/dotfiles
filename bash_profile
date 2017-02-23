@@ -86,7 +86,7 @@ function gitst {
 function gitDefault {
   export GIT_AUTHOR_NAME=tenorok
   export GIT_AUTHOR_EMAIL=mail@tenorok.ru
-  export GIT_COMMITTER_NAME=Artem Kurbatov
+  export GIT_COMMITTER_NAME=tenorok
   export GIT_COMMITTER_EMAIL=mail@tenorok.ru
   export GITHUB_HOST=github.com
 }

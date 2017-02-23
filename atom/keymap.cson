@@ -8,7 +8,6 @@
 'atom-text-editor':
   'cmd-backspace': 'editor:delete-line'
   'cmd-e': 'unset!'
-  'shift-cmd-enter': 'navigate:forward-new'
 
 'atom-text-editor:not([mini])':
   'ctrl-shift-C': 'unset!'
@@ -16,7 +15,11 @@
   'ctrl-c': 'copy-path:copy-project-relative-dirname'
 
 '.platform-darwin atom-text-editor:not(.mini)':
-  'cmd-enter': 'goto-definition:go'
+  'shift-cmd-enter': 'goto-definition:go'
+
+'.platform-darwin atom-text-editor[data-grammar~=js]':
+    'cmd-enter': 'atom-ternjs:definition'
+
 
 'atom-workspace atom-text-editor:not([mini])':
   'cmd-[': 'unset!'

@@ -2,3 +2,7 @@
     'function-expression':
         'prefix': 'f'
         'body': 'function($1) \\{$0\\}'
+
+    'flow-type':
+        'prefix': ':'
+        'body': '/*:$0*/'

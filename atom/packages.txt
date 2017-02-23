@@ -9,6 +9,7 @@ file-icons@2.0.14
 git-blame@0.4.11
 goto-definition@1.1.19
 highlight-selected@0.12.0
+language-babel@2.55.4
 language-stylus@0.2.0
 last-cursor-position@0.9.0
 local-config@0.1.2
@@ -17,4 +18,4 @@ minimap-git-diff@4.3.1
 minimap-highlight-selected@4.5.0
 navigate@0.1.17
 recent-files-fuzzy-finder@0.3.0
-tree-view-copy-relative-path@1.0.1
+todo@0.6.0
