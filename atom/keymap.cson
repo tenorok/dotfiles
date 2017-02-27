@@ -12,7 +12,8 @@
 'atom-text-editor:not([mini])':
   'ctrl-shift-C': 'unset!'
   'shift-cmd-c': 'editor:copy-path'
-  'ctrl-c': 'copy-path:copy-project-relative-dirname'
+  'ctrl-c': 'copy-path:copy-basename'
+  'ctrl-shift-c': 'copy-path:copy-project-relative-dirname'
 
 '.platform-darwin atom-text-editor:not(.mini)':
   'shift-cmd-enter': 'goto-definition:go'
