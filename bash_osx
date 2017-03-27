@@ -15,6 +15,3 @@ git config --global core.editor "subl -n -w"
 
 # hub
 eval "$(hub alias -s)"
-
-# NVM
-source $(brew --prefix nvm)/nvm.sh
