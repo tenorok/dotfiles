@@ -17,7 +17,8 @@ brew install git \
     hub \
     ccat \
     ag \
-    tree
+    tree \
+    m-cli
 
 brew cask install sublime-text \
     atom \
