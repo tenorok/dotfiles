@@ -11,3 +11,7 @@ leave ~/yandex/*
    gitDefault
    NPMDefault
    echo -e 'Git and NPM switched to \033[0;32mdefault'
+
+enter ~/yandex/browser/*
+   export PATH=/Users/tenorok/yandex/ios_tools/infra:/Users/tenorok/yandex/depot_tools:$PATH
+   export PS1="\[$YELLOW\]\w\[$GRAY\] › "

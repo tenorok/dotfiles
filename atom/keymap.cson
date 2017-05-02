@@ -1,9 +1,11 @@
 'atom-workspace':
+  'alt--': 'unset!'
   'cmd-e': 'recent-files-fuzzy-finder:toggle-finder'
   'cmd-[': 'last-cursor-position:previous'
   'cmd-]': 'last-cursor-position:next'
   'shift-cmd-o': 'advanced-open-file:toggle'
   'cmd-§': 'tree-view:toggle-focus'
+  'shift-cmd-i': 'bem-levels:images-touch-phone'
 
 'atom-text-editor':
   'cmd-backspace': 'editor:delete-line'
@@ -14,13 +16,13 @@
   'shift-cmd-c': 'editor:copy-path'
   'ctrl-c': 'copy-path:copy-basename'
   'ctrl-shift-c': 'copy-path:copy-project-relative-dirname'
+  'ctrl-cmd-shift-c': 'copy-path:copy-project-relative-path'
 
 '.platform-darwin atom-text-editor:not(.mini)':
   'shift-cmd-enter': 'goto-definition:go'
 
 '.platform-darwin atom-text-editor[data-grammar~=js]':
     'cmd-enter': 'atom-ternjs:definition'
-
 
 'atom-workspace atom-text-editor:not([mini])':
   'cmd-[': 'unset!'
