@@ -31,11 +31,11 @@
 [alias]
     cp = cherry-pick
     st = status -s
+    stc = diff --name-only --diff-filter=U
     cl = clone
     ci = commit
     co = checkout
     br = branch
-    di = diff
     dc = diff --cached
     ls = ls-files
     unstage = reset HEAD --

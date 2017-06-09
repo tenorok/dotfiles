@@ -5,7 +5,11 @@
   'cmd-]': 'last-cursor-position:next'
   'shift-cmd-o': 'advanced-open-file:toggle'
   'cmd-§': 'tree-view:toggle-focus'
-  'shift-cmd-i': 'bem-levels:images-touch-phone'
+  'shift-cmd-i': 'bem-levels:video-touch-phone'
+  'cmd-k right': 'window:focus-pane-on-right'
+  'cmd-k left': 'window:focus-pane-on-left'
+  'cmd-k cmd-right': 'pane:split-right-and-copy-active-item'
+  'cmd-k cmd-left': 'pane:split-left-and-copy-active-item'
 
 'atom-text-editor':
   'cmd-backspace': 'editor:delete-line'

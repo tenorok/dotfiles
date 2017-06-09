@@ -13,7 +13,7 @@
       ".idea"
       "libs"
       "static"
-      "video"
+      "images"
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
@@ -22,7 +22,7 @@
       "atom-light-syntax"
     ]
   "custom-title":
-    template: "<%= relativeFilePath %>"
+    template: "<%= projectName %> → <%= relativeFilePath %>"
   docblockr:
     align_tags: "no"
     return_tag: "@returns"
