@@ -37,7 +37,6 @@
     co = checkout
     br = branch
     dc = diff --cached
-    ls = ls-files
     unstage = reset HEAD --
     last = log -1 HEAD
     back = reset --soft HEAD^
@@ -47,7 +46,9 @@
     gcup = gc --prune=now
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
+    ls = ls-files
     lsi = !git ls-files -v | grep '^h'
+    lsof = diff-tree --no-commit-id --name-only -r
     lg  = log --oneline --graph --decorate
     lga  = log --oneline --graph --decorate --all
     lgp = log --oneline --graph --decorate --all --simplify-by-decoration
