@@ -31,3 +31,6 @@
 'atom-workspace atom-text-editor:not([mini])':
   'cmd-[': 'unset!'
   'cmd-]': 'unset!'
+
+'.platform-darwin atom-text-editor[data-grammar~=ts]':
+  'cmd-enter': 'typescript:go-to-declaration'

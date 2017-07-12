@@ -1,4 +1,6 @@
 "*":
+  "advanced-open-file":
+    helmDirSwitch: true
   core:
     disabledPackages: [
       "spell-check"
