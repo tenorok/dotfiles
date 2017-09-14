@@ -12,8 +12,10 @@ atom-text-editor atom-text-editor-minimap:not([stand-alone]), html atom-text-edi
     width: 50px;
 }
 
-atom-text-editor::shadow .is-focused .cursors .cursor {
+atom-text-editor.is-focused .cursors .cursor {
     opacity: 1;
+    border-width: 2px;
+    border-color: #777;
 }
 
 .atom-dock-toggle-button {
