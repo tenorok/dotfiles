@@ -6,3 +6,44 @@
     'flow-type':
         'prefix': ':'
         'body': '/*:$0*/'
+
+    '@type':
+        'prefix': '@type'
+        'body': '/** @type {$0} */'
+
+    'describe':
+        'prefix': 'describe'
+        'body': """
+            describe('$1', () => {
+                it('$2', () => {$0});
+            });
+        """
+
+    'it':
+        'prefix': 'it'
+        'body': "it('$1', () => {$0});"
+
+    'for..in':
+        'prefix': 'forin'
+        'body': """
+            for (const ${1:key} in ${2:list}) {
+                if (!${2:list}.hasOwnProperty(${1:key})) {
+                    continue;
+                }
+
+                $0
+            }
+        """
+
+'.source.ts':
+    'for..in':
+        'prefix': 'forin'
+        'body': """
+            for (const ${1:key} in ${2:list}) {
+                if (!${2:list}.hasOwnProperty(${1:key})) {
+                    continue;
+                }
+
+                $0
+            }
+        """
