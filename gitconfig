@@ -41,6 +41,7 @@
     last = log -1 HEAD
     back = reset --soft HEAD^
     brup = remote prune origin
+    tagup = !git tag -l | xargs git tag -d && git fetch -t
     cleanup = clean -xdf
     gcls = fsck
     gcup = gc --prune=now
