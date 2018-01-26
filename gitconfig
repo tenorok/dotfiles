@@ -28,6 +28,8 @@
     ff = no
 [branch]
     autosetuprebase = always
+[fetch]
+    prune = true
 [alias]
     cp = cherry-pick
     st = status -s
@@ -40,7 +42,7 @@
     unstage = reset HEAD --
     last = log -1 HEAD
     back = reset --soft HEAD^
-    brup = remote prune origin
+    brup = !git remote prune origin && git branch --merged | grep -v master | grep -v dev | xargs git branch -d
     tagup = !git tag -l | xargs git tag -d && git fetch -t
     cleanup = clean -xdf
     gcls = fsck
