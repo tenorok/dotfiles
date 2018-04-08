@@ -5,6 +5,7 @@
     editor = vim
     excludesfile = ~/.gitignore
     quotepath = false
+    ignorecase = false
 [color]
     branch = auto
     diff = auto
