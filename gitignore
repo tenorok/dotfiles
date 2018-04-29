@@ -26,3 +26,6 @@ npm-debug.log
 
 # Sublime
 *.sublime-workspace
+
+# VSCode
+.history
