@@ -102,6 +102,9 @@ function NPMDefault {
 }
 NPMDefault
 
+# Ruby Version Manager
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+
 export NODE_PATH=./node_modules:$(npm root -g)
 
 alias edital='open -a "Sublime Text" ~/.bash_profile'
@@ -132,3 +135,8 @@ jailunmount()
     JAIL=${1}
     umount /mount/$1 >/dev/null
 }
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+source $(brew --prefix)/etc/bash_completion
+source ~/runjs.completion.sh

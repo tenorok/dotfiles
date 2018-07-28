@@ -26,6 +26,7 @@ env:
 
 bash:
 	ln -s ${pwd}/bash_profile ~/.bash_profile
+	ln -s ${pwd}/runjs.completion.sh ~/runjs.completion.sh
 
 bash-osx:
 	ln -s ${pwd}/bash_osx ~/.bash_osx
