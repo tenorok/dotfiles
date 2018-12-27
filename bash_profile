@@ -113,27 +113,12 @@ alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
 alias edithosts='open -a "Sublime Text" /private/etc/hosts'
 alias getchmod='stat -f "%OLp"'
 alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
+alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}"'
 
 function makedmg() {
     DIR=$1;
     VOL=$2;
     hdiutil create $DIR -type SPARSEBUNDLE -size 5000m -fs HFS+J -volname $VOL -encryption
-}
-
-jailmount()
-{
-    JAIL=${1}
-    FOLDER=${2:-"/home/$USER"}
-    echo -e "\033[33m===> MOUNT JAIL: \033[31m$JAIL \033[0m"
-    mkdir -p /mount/$JAIL
-    jailunmount $JAIL
-    sshfs $USER@$JAIL:$FOLDER /mount/$JAIL -oauto_cache,reconnect,volname=$1
-}
-
-jailunmount()
-{
-    JAIL=${1}
-    umount /mount/$1 >/dev/null
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
