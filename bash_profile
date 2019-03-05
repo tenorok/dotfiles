@@ -13,7 +13,7 @@ export EDITOR='subl -w'
 export GOPATH=$HOME/projects/go
 export GO15VENDOREXPERIMENT=1
 
-export PATH=$GOPATH/bin:./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:bin
+export PATH=bin:$GOPATH/bin:./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 source ~/.git-completion.bash
 
