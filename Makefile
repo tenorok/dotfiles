@@ -16,20 +16,20 @@ subl:
 	git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light
 
 git:
-	ln -s ${pwd}/git-completion.bash ~/.git-completion.bash
-	ln -s ${pwd}/gitconfig ~/.gitconfig
-	ln -s ${pwd}/gitignore ~/.gitignore
+	ln -sfn ${pwd}/git-completion.bash ~/.git-completion.bash
+	ln -sfn ${pwd}/gitconfig ~/.gitconfig
+	ln -sfn ${pwd}/gitignore ~/.gitignore
 
 env:
-	ln -s ${pwd}/ondirrc ~/.ondirrc
+	ln -sfn ${pwd}/ondirrc ~/.ondirrc
 	mkdir ~/.nvm
 
 bash:
-	ln -s ${pwd}/bash_profile ~/.bash_profile
-	ln -s ${pwd}/runjs.completion.sh ~/runjs.completion.sh
+	ln -sfn ${pwd}/bash_profile ~/.bash_profile
+	ln -sfn ${pwd}/runjs.completion.sh ~/runjs.completion.sh
 
 bash-osx:
-	ln -s ${pwd}/bash_osx ~/.bash_osx
+	ln -sfn ${pwd}/bash_osx ~/.bash_osx
 
 ssh:
 	[ -d ~/.ssh ] || mkdir ~/.ssh
