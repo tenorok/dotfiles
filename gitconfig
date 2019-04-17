@@ -5,7 +5,6 @@
     editor = vim
     excludesfile = ~/.gitignore
     quotepath = false
-    ignorecase = false
 [color]
     branch = auto
     diff = auto
@@ -31,6 +30,8 @@
     autosetuprebase = always
 [fetch]
     prune = true
+[push]
+	default = simple
 [alias]
     cp = cherry-pick
     st = status -s
@@ -60,8 +61,9 @@
     required = true
     clean = git-lfs clean %f
     smudge = git-lfs smudge --skip %f
+    process = git-lfs filter-process --skip
+[lfs "https://github.yandex-team.ru/"]
+    locksverify = false
 [lfs]
     batch = true
     concurrenttransfers = 15
-[push]
-	default = simple
