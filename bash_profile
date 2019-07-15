@@ -13,13 +13,6 @@ export EDITOR='subl -w'
 export GOPATH=$HOME/projects/go
 export GO15VENDOREXPERIMENT=1
 
-export PATH=bin:$GOPATH/bin:./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-
-source ~/.git-completion.bash
-
-[ -f ~/.bash_osx ] && source ~/.bash_osx
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
-
 RED="\033[0;31m"
 PURPLE="\033[0;35m"
 CYAN="\033[0;36m"
@@ -73,6 +66,9 @@ export PS1
 
 alias l='ls -lAhG'
 alias cat='ccat --bg=dark'
+alias getchmod='stat -f "%OLp"'
+alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
+alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}"'
 
 function gitst {
   if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1) ]; then
@@ -104,23 +100,15 @@ NPMDefault
 
 # Ruby Version Manager
 [ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-export NODE_PATH=./node_modules:$(npm root -g)
-
-alias edital='open -a "Sublime Text" ~/.bash_profile'
-alias saveal='source ~/.bash_profile && echo ".bash_profile has started"'
-
-alias edithosts='open -a "Sublime Text" /private/etc/hosts'
-alias getchmod='stat -f "%OLp"'
-alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
-alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}"'
-
-function makedmg() {
-    DIR=$1;
-    VOL=$2;
-    hdiutil create $DIR -type SPARSEBUNDLE -size 5000m -fs HFS+J -volname $VOL -encryption
-}
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+source ~/.git-completion.bash
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 source ~/runjs.completion.sh
+
+export PATH=$GOPATH/bin:$PATH
+export ORIGINAL_PATH=$PATH
+
+[ -f ~/.bash_osx ] && source ~/.bash_osx
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases

@@ -16,5 +16,12 @@ enter ~/yandex/browser/*
    export PATH=/Users/tenorok/yandex/ios_tools/infra:/Users/tenorok/yandex/depot_tools:$PATH
    export PS1="\[$YELLOW\]\w\[$GRAY\] › "
 
-enter ~/yandex/(web4(-.*)?)/*
+enter ~/yandex/(web4(.*)?)/*
    export PS1="\[$YELLOW\]\w\[$GRAY\] › "
+
+enter ~/(projects|yandex)/([^/]+)
+   export PATH=$ORIGINAL_PATH
+   export PATH=$(npm bin):$ORIGINAL_PATH
+
+leave ~/(projects|yandex)/([^/]+)
+   export PATH=$ORIGINAL_PATH
