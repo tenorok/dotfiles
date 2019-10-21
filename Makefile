@@ -27,6 +27,9 @@ env:
 bash:
 	ln -sfn ${pwd}/bash_profile ~/.bash_profile
 	ln -sfn ${pwd}/runjs.completion.sh ~/runjs.completion.sh
+	touch ${pwd}/npm.completion.sh
+	npm completion > ${pwd}/npm.completion.sh
+	ln -sfn ${pwd}/npm.completion.sh ~/npm.completion.sh
 
 bash-osx:
 	ln -sfn ${pwd}/bash_osx ~/.bash_osx

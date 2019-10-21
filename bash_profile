@@ -106,6 +106,7 @@ NPMDefault
 source ~/.git-completion.bash
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 source ~/runjs.completion.sh
+source ~/npm.completion.sh
 
 export PATH=$GOPATH/bin:$PATH
 export ORIGINAL_PATH=$PATH
