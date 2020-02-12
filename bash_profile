@@ -5,10 +5,13 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export TERM=xterm-color
+export COLORTERM=truecolor
+export MICRO_TRUECOLOR=1
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacdx
 
 export EDITOR='subl -w'
+export DISPLAY=:0.0
 
 export GOPATH=$HOME/projects/go
 export GO15VENDOREXPERIMENT=1

@@ -1,4 +1,11 @@
-ForwardAgent yes
+IdentityFile ~/.ssh/id_rsa
+
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
 
 # github.com
     Host github.com
