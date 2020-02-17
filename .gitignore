@@ -1,3 +1,6 @@
-.DS_Store
-*.log
-node_modules
+symlinks/.dotfiles/npm.completion.sh
+symlinks/.dotfiles/ondir-scripts.sh
+symlinks/.dotfiles/git-completion.sh
+
+symlinks/.micro/*
+!symlinks/.micro/settings.json

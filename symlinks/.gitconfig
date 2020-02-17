@@ -2,7 +2,7 @@
     name = tenorok
     email = mail@tenorok.ru
 [core]
-    editor = vim
+    editor = "micro"
     excludesfile = ~/.gitignore
     quotepath = false
 [color]
@@ -31,7 +31,7 @@
 [fetch]
     prune = true
 [push]
-	default = simple
+    default = simple
 [alias]
     cp = cherry-pick
     st = status -s

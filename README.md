@@ -1,13 +1,23 @@
 # Dotfiles
 
-Быстрая настройка окружения на новой машине с OS X.
+Быстрая настройка окружения на новой машине MacOS и Ubuntu.
 
 ## Установка
 
-Перед установкой необходимо наличие [OS X Developer Tools](https://developer.apple.com/technologies/tools/).
+### MacOS
 
-```bash
-make
+Перед установкой в MacOS необходимо наличие [OS X Developer Tools](https://developer.apple.com/technologies/tools/).
+
+```
+./install/common.sh
+./install/osx.sh
+```
+
+### Ubuntu
+
+```
+./install/common.sh
+./install/ubuntu.sh
 ```
 
 ## Atom
