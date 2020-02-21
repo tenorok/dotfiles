@@ -1,0 +1,13 @@
+diff --git tools/examples/build.js tools/examples/build.js
+index c896092f3c..27c5d5d96a 100644
+--- tools/examples/build.js
++++ tools/examples/build.js
+@@ -42,7 +42,7 @@ const build = async() => {
+         common: {},
+     };
+
+-    const files = await getBlockFiles('examples/**/*.json', 'examples/**/*.xml');
++    const files = await getBlockFiles('examples/**/*.json', 'examples/**/*.foo');
+
+     if (env !== 'development') {
+         await Promise.all(files.map(updateFileWithData));

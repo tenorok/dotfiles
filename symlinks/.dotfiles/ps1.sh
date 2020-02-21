@@ -1,9 +1,11 @@
+# https://misc.flogisoft.com/bash/tip_colors_and_formatting
 RED="\033[0;31m"
 PURPLE="\033[0;35m"
 CYAN="\033[0;36m"
 YELLOW="\033[0;33m"
 GREEN="\033[0;32m"
 GRAY="\e[0m"
+UNDERLINE="\e[4m"
 
 function git_color {
   local git_status="$(git status 2> /dev/null)"
