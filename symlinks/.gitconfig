@@ -40,7 +40,11 @@
     ci = commit
     co = checkout
     br = branch
+    df = diff
+    dfi = !sh -c 'git diff '"'"':!$1'"'"''
     dc = diff --cached
+    dci = !sh -c 'git diff --cached '"'"':!$1'"'"''
+    dfa = diff HEAD
     unstage = reset HEAD --
     last = log -1 HEAD
     back = reset --soft HEAD^
