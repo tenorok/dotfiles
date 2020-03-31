@@ -2,6 +2,7 @@ sudo -v # ask for password only at the beginning
 
 [ -d ~/.ssh ] || mkdir ~/.ssh
 [ -f ~/.ssh/config ] || cp -n ssh/config ~/.ssh/config
+[ -f ~/.ssh/rc ] || cp -n ssh/rc ~/.ssh/rc
 chmod 644 ~/.ssh/config
 ssh-keygen -t rsa -C "mail@tenorok.ru" -N "" -f ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
