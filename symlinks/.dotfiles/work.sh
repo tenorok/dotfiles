@@ -17,14 +17,33 @@ function turbo_testing() {
 
 function templar_dev() {
     local i="${1:-1}"
+
+    local sourceHost="";
+    if [ "$2" == "prod" ]; then
+        sourceHost="TEMPLAR_SOURCE_HOST=yandex.ru"
+    fi
+
     set -x
-    TUNNELER_HOST=ws$i-tunnelerapi.si.yandex-team.ru NODE_ENV=development npx templar start --middleware='./.templar/middleware' --dont-track -p $i$i$i$i --public
+    eval $sourceHost \
+    TUNNELER_HOST=ws$i-tunnelerapi.si.yandex-team.ru \
+    NODE_ENV=development \
+    BUNDLE_FILTER=Beru,Health,Lc,Market,Mg,MM,News,Sport,Weather \
+    npx templar start --middleware='./.templar/middleware' --dont-track -p $i$i$i$i --public
     set +x
 }
 
 function templar_testing() {
     local i="${1:-1}"
+
+    local sourceHost="";
+    if [ "$2" == "prod" ]; then
+        sourceHost="TEMPLAR_SOURCE_HOST=yandex.ru"
+    fi
+
     set -x
-    TUNNELER_HOST=ws$i-tunnelerapi.si.yandex-team.ru NODE_ENV=testing npx templar start --dont-track -p $i$i$i$i --public
+    eval $sourceHost \
+    TUNNELER_HOST=ws$i-tunnelerapi.si.yandex-team.ru \
+    NODE_ENV=testing \
+    npx templar start --dont-track -p $i$i$i$i --public
     set +x
 }
