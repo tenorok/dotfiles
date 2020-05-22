@@ -18,13 +18,17 @@ function turbo_testing() {
 function templar_dev() {
     local i="${1:-1}"
 
-    local sourceHost="";
+    local options="";
     if [ "$2" == "prod" ]; then
-        sourceHost="TEMPLAR_SOURCE_HOST=yandex.ru"
+        options+="TEMPLAR_SOURCE_HOST=yandex.ru"
+    fi
+
+    if [ "$3" == "tap" ]; then
+        options+=" ECOM_TAP=true"
     fi
 
     set -x
-    eval $sourceHost \
+    eval $options \
     TUNNELER_HOST=ws$i-tunnelerapi.si.yandex-team.ru \
     NODE_ENV=development \
     BUNDLE_FILTER=Beru,Health,Lc,Market,Mg,MM,News,Sport,Weather \
@@ -35,13 +39,17 @@ function templar_dev() {
 function templar_testing() {
     local i="${1:-1}"
 
-    local sourceHost="";
+    local options="";
     if [ "$2" == "prod" ]; then
-        sourceHost="TEMPLAR_SOURCE_HOST=yandex.ru"
+        options+="TEMPLAR_SOURCE_HOST=yandex.ru"
+    fi
+
+    if [ "$3" == "tap" ]; then
+        options+=" ECOM_TAP=true"
     fi
 
     set -x
-    eval $sourceHost \
+    eval $options \
     TUNNELER_HOST=ws$i-tunnelerapi.si.yandex-team.ru \
     NODE_ENV=testing \
     npx templar start --dont-track -p $i$i$i$i --public
