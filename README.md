@@ -10,9 +10,13 @@
 
 ```
 ./install/common.sh
-./install/osx.sh
 
-./install/osx.sh tenorok@yandex-team.ru # Для генерации рабочих ключей
+# Генерация ssh-ключа
+./install/ssh-keygen.sh
+# Генерация ssh-ключа с нестандартной почтой и именем файла
+./install/ssh-keygen.sh tenorok@yandex-team.ru id_yandex
+
+./install/osx.sh
 ```
 
 ### Ubuntu
