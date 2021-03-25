@@ -10,8 +10,7 @@ ssh-keygen -t rsa -C "$EMAIL" -N "" -f ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 echo -e "\033[0;32mPaste key from your clipboard to https://github.com/settings/ssh"
 
-curl -L github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /usr/local
-brew install phinze/cask/brew-cask
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew update
 brew upgrade
@@ -34,10 +33,13 @@ brew install git \
     tree \
     m-cli \
     sublime-text \
+    visual-studio-code \
     iterm2 \
     xscope \
     transmit \
     chromium \
+    telegram-desktop \
+    whatsapp \
     skype \
     teamviewer \
     yandexdisk \

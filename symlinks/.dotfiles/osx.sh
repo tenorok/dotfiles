@@ -6,4 +6,7 @@ alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew 
 # hub
 eval "$(hub alias -s)"
 
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 include $DOTFILES/ondir-scripts.sh
