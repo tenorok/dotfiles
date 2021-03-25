@@ -1,15 +1,14 @@
 sudo -v # ask for password only at the beginning
 
+EMAIL=${1:-mail@tenorok.ru}
+
 [ -d ~/.ssh ] || mkdir ~/.ssh
 [ -f ~/.ssh/config ] || cp -n ssh/config ~/.ssh/config
 [ -f ~/.ssh/rc ] || cp -n ssh/rc ~/.ssh/rc
 chmod 644 ~/.ssh/config
-ssh-keygen -t rsa -C "mail@tenorok.ru" -N "" -f ~/.ssh/id_rsa
+ssh-keygen -t rsa -C "$EMAIL" -N "" -f ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 echo -e "\033[0;32mPaste key from your clipboard to https://github.com/settings/ssh"
-
-cp ./preferences/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light
 
 curl -L github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /usr/local
 brew install phinze/cask/brew-cask
@@ -26,6 +25,7 @@ brew install git \
     bash-completion@2 \
     nvm \
     go \
+    lf \
     wget \
     ondir \
     hub \
@@ -52,3 +52,6 @@ brew install git \
     clipy
 
 brew cleanup
+
+cp ./preferences/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light

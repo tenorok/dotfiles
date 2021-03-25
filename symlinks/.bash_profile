@@ -30,6 +30,7 @@ gitDefault
 
 # NVM нужно инициализировать до использования NPM
 export NVM_DIR=~/.nvm
+export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist/
 include $NVM_DIR/nvm.sh
 include $NVM_DIR/bash_completion
 

@@ -1,6 +1,6 @@
 alias l='ls -lAhG'
 alias getchmod='stat -f "%OLp"'
-alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}"'
+alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Size}}"'
 
 function gitst {
   if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1) ]; then

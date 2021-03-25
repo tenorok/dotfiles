@@ -11,6 +11,8 @@
 ```
 ./install/common.sh
 ./install/osx.sh
+
+./install/osx.sh tenorok@yandex-team.ru # Для генерации рабочих ключей
 ```
 
 ### Ubuntu
