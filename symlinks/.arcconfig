@@ -1,0 +1,21 @@
+[core]
+    editor = "micro"
+[branch "trunk"]
+    allowCommit = false
+[alias]
+    cp = cherry-pick
+    st = status -s
+    stc = diff --name-only --diff-filter=U
+    cl = clone
+    df = diff
+    dfi = !sh -c 'arc diff '"'"':!$1'"'"''
+    dc = diff --cached
+    dci = !sh -c 'arc diff --cached '"'"':!$1'"'"''
+    dfa = diff HEAD
+    unstage = reset HEAD --
+    last = log --max-count 1 HEAD
+    back = reset --soft HEAD^
+    cleanup = clean -xd
+    lg = log --oneline --graph
+    lgn = "!arc log --oneline --graph --max-count $1"
+    prp = pr create --push --publish
