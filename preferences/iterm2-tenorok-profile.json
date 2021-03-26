@@ -364,8 +364,8 @@
   "Automatically Log" : false,
   "Smart Cursor Color" : true,
   "Semantic History" : {
-    "action" : "best editor",
     "text" : "",
+    "action" : "best editor",
     "editor" : "com.sublimetext.3"
   },
   "Ambiguous Double Width" : false,
@@ -420,6 +420,7 @@
     "Red Component" : 1,
     "Blue Component" : 1
   },
+  "Allow Paste Bracketing" : false,
   "Columns" : 80,
   "Visual Bell" : true,
   "Custom Directory" : "No",
