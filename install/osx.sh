@@ -6,8 +6,8 @@ brew update
 brew upgrade
 
 brew install bash
-echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/bash
+echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells
+chsh -s $(brew --prefix)/bin/bash # set default shell
 
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 source $DIR/brew-applications.sh
@@ -18,5 +18,6 @@ done
 
 brew cleanup
 
+mkdir ~/.nvm
 cp ./preferences/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
 git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light

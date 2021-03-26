@@ -1,5 +1,5 @@
 EMAIL=${1:-mail@tenorok.ru}
-KEY_NAME=${1:-id_rsa}
+KEY_NAME=${2:-id_rsa}
 
 [ -d ~/.ssh ] || mkdir ~/.ssh
 [ -f ~/.ssh/config ] || cp -n ssh/config ~/.ssh/config
