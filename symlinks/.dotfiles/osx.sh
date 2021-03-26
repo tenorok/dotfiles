@@ -4,8 +4,10 @@ alias cat='ccat --bg=dark'
 alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
 
 # brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH=$(brew --prefix)/bin:$PATH
+# Intel
+[ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
+# M1
+[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # hub
 eval "$(hub alias -s)"
