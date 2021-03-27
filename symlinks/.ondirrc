@@ -18,10 +18,3 @@ enter ~/yandex/browser/*
 
 enter ~/yandex/(web4(.*)?)/*
    export PS1="\[$YELLOW\]\w\[$GRAY\] › "
-
-enter ~/(projects|yandex)/([^/]+)
-   export PATH=$ORIGINAL_PATH
-   export PATH=$(npm bin):$ORIGINAL_PATH
-
-leave ~/(projects|yandex)/([^/]+)
-   export PATH=$ORIGINAL_PATH
