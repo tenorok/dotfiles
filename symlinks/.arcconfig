@@ -5,7 +5,7 @@
 [alias]
     cp = cherry-pick
     st = status -s
-    stc = diff --name-only --diff-filter=U
+    stc = diff --name-status -U 0
     cl = clone
     df = diff
     dfi = !sh -c 'arc diff '"'"':!$1'"'"''
