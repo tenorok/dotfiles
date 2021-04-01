@@ -18,4 +18,5 @@
     cleanup = clean -xd
     lg = log --oneline --graph
     lgn = "!arc log --oneline --graph --max-count $1"
+    pushu = !arc push -u $(arc branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
     prp = pr create --push --publish
