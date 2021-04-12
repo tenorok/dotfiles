@@ -46,7 +46,7 @@ include $DOTFILES/runjs.completion.sh
 include $DOTFILES/npm.completion.sh
 
 # Путь считывается в конце после всех добавлений.
-export PATH=$GOPATH/bin:$PATH
+export PATH=./bin:$PATH:$GOPATH/bin
 export ORIGINAL_PATH=$PATH
 
 # Если ubuntu.
