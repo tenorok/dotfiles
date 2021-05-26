@@ -25,7 +25,7 @@ function vcs_state {
   if [[ $VCS = "git" ]]; then
     remote_branch="@{u}"
   else
-    remote_branch="arcadia/$(vcs_branch $VCS)"
+    remote_branch="arcadia/$(arc info 2> /dev/null | grep 'remote:' | sed -e 's/remote: \(.*\)/\1/')"
   fi
 
   local commit_local=$($VCS rev-parse $branch 2> /dev/null)

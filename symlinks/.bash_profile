@@ -45,6 +45,11 @@ include /usr/local/etc/profile.d/bash_completion.sh
 include $DOTFILES/runjs.completion.sh
 include $DOTFILES/npm.completion.sh
 
+if command -v arc &> /dev/null
+then
+  arc completion bash > ~/.arc/completion.bash && source ~/.arc/completion.bash
+fi
+
 # Путь считывается в конце после всех добавлений.
 export PATH=./bin:node_modules/.bin:$PATH:$GOPATH/bin
 export ORIGINAL_PATH=$PATH
