@@ -85,6 +85,10 @@ if [[ -f "/usr/bin/hostnamectl" ]]; then
   PS1+="\[$CYAN\]\h "
 fi
 PS1+="\[$YELLOW\]\w"
-PS1+="\$(VCSPS1)"
-PS1+="\[$GRAY\] › "
+PS1+="\$(VCSPS1) "
+VCSPS1RESULT=$(VCSPS1)
+if [[ ${#PWD}+${#VCSPS1RESULT} -gt 70 ]]; then
+  PS1+="\n"
+fi
+PS1+="\[$GRAY\]› "
 export PS1

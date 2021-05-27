@@ -22,6 +22,10 @@ include() {
   [[ -f "$1" ]] && source "$1"
 }
 
+init() {
+  source ~/.bash_profile
+}
+
 include $DOTFILES/ps1.sh
 include $DOTFILES/aliases.sh
 
