@@ -44,3 +44,22 @@ function kotik_testing() {
     npx archon kotik --kotik-counters -p $i$i$i$i --public
     set +x
 }
+
+function web4_clean {
+    arc cleanup
+    cd ../../
+    npm ci
+    cd -
+    arc prefetch-files .
+    npm ci
+    npm run deps
+    npm run build
+    npm run build:serp-components
+}
+
+function arc_mount {
+    cd ~/arc/
+    arc mount --mount arcadia/ --store store/ --object-store objects/
+    arc mount --mount arcadia2/ --store store2/ --object-store objects/
+    cd -
+}

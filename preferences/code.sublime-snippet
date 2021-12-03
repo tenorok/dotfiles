@@ -1,0 +1,10 @@
+<snippet>
+    <description>Вставка JS для Фемиды</description>
+    <tabTrigger>code</tabTrigger>
+    <content><![CDATA[
+<{code
+%%(javascript)
+${1}
+%%}>
+]]></content>
+</snippet>
