@@ -54,7 +54,6 @@ function web4_clean {
     npm ci
     npm run deps
     npm run build
-    npm run build:serp-components
 }
 
 function arc_mount {
