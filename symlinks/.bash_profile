@@ -29,14 +29,21 @@ init() {
 include $DOTFILES/ps1.sh
 include $DOTFILES/aliases.sh
 
+# Если ubuntu.
+if [[ -f "/usr/bin/hostnamectl" ]]; then
+  include $DOTFILES/ubuntu.sh
+else
+  include $DOTFILES/osx.sh
+fi
+
 # GIT
 gitDefault
 
 # NVM нужно инициализировать до использования NPM
 export NVM_DIR=~/.nvm
 export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist/
-include $NVM_DIR/nvm.sh
-include $NVM_DIR/bash_completion
+include $(brew --prefix)/opt/nvm/nvm.sh
+include $(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm
 
 # NPM
 NPMDefault
@@ -58,9 +65,3 @@ fi
 export PATH=./bin:node_modules/.bin:$PATH:$GOPATH/bin
 export ORIGINAL_PATH=$PATH
 
-# Если ubuntu.
-if [[ -f "/usr/bin/hostnamectl" ]]; then
-  include $DOTFILES/ubuntu.sh
-else
-  include $DOTFILES/osx.sh
-fi

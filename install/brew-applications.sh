@@ -17,12 +17,13 @@ export APPLICATIONS=(
     iterm2
     xscope
     transmit
-    chromium
     telegram-desktop
     whatsapp
     slack
     skype
     teamviewer
+    yandex
+    yandex-disk
     dropbox
     transmission
     vlc

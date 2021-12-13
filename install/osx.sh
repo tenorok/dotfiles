@@ -1,6 +1,7 @@
 sudo -v # ask for password only at the beginning
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
 brew upgrade
