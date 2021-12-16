@@ -7,6 +7,9 @@ add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main
 apt-get update
 apt-get install git git-lfs tmux ag ondir golang
 
+# activate glob expanding
+shopt -s globstar
+
 NVM_DIR=$DOTFILES/nvm curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 include $NVM_DIR/nvm.sh
 
