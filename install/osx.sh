@@ -19,6 +19,9 @@ done
 
 brew cleanup
 
+brew services start transmission-cli
+echo "Transmission available at http://127.0.0.1:9091/transmission/web/"
+
 mkdir ~/.nvm
 cp ./preferences/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
 git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light

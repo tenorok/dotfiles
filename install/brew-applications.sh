@@ -16,6 +16,7 @@ export APPLICATIONS=(
     visual-studio-code
     iterm2
     xscope
+    postman
     transmit
     telegram-desktop
     whatsapp
@@ -33,4 +34,7 @@ export APPLICATIONS=(
     spectacle
     apptivate
     clipy
+    keycastr
+    musicbrainz-picard
+    xld
 )
