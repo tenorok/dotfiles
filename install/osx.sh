@@ -10,6 +10,8 @@ brew install bash
 echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells
 chsh -s $(brew --prefix)/bin/bash # set default shell
 
+brew tap homebrew/cask-fonts
+
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 source $DIR/brew-applications.sh
 

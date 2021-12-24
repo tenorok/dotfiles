@@ -37,4 +37,5 @@ export APPLICATIONS=(
     keycastr
     musicbrainz-picard
     xld
+    font-fira-code
 )
