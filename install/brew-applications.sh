@@ -13,6 +13,7 @@ export APPLICATIONS=(
     tree
     m-cli
     sublime-text
+    micro
     visual-studio-code
     iterm2
     xscope

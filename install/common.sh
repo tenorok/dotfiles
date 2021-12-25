@@ -6,6 +6,3 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 
 touch $(pwd)/symlinks/dotfiles/npm.completion.sh
 npm completion > $(pwd)/symlinks/dotfiles/npm.completion.sh
-
-curl https://getmic.ro | bash
-mv ./micro /usr/local/bin/micro

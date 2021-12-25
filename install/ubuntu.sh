@@ -15,3 +15,6 @@ include $NVM_DIR/nvm.sh
 
 go get -u github.com/gokcehan/lf
 ln -sfn $(HOME)/projects/go/bin/lf /usr/local/bin/micro
+
+curl https://getmic.ro | bash
+mv ./micro /usr/local/bin/micro
