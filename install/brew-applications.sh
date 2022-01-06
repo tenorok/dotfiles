@@ -39,4 +39,5 @@ export APPLICATIONS=(
     musicbrainz-picard
     xld
     font-fira-code
+    ffmpeg
 )
