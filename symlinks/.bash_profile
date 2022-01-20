@@ -18,6 +18,9 @@ export GO15VENDOREXPERIMENT=1
 export DOTFILES=$HOME/.dotfiles
 export MICRO_CONFIG_HOME=$HOME/.micro
 
+# Раскрывать глобы
+shopt -s globstar
+
 include() {
   [[ -f "$1" ]] && source "$1"
 }
@@ -64,4 +67,3 @@ fi
 # Путь считывается в конце после всех добавлений.
 export PATH=./bin:node_modules/.bin:$PATH:$GOPATH/bin
 export ORIGINAL_PATH=$PATH
-
