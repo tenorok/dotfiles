@@ -29,6 +29,11 @@ init() {
   source ~/.bash_profile
 }
 
+strip() {
+    local string=${1#$"$2"}
+    echo ${string%$"$2"}
+}
+
 include $DOTFILES/ps1.sh
 include $DOTFILES/aliases.sh
 
