@@ -5,7 +5,6 @@
 [alias]
     cp = cherry-pick
     st = status -s
-    stc = "!arc status -s $PWD | grep -E '^(.U|U.|AA|DD) ' | cut -d ' ' -f 2 | xargs -I {} bash -c 'strip {} $(arc rev-parse --show-prefix)/'"
     cl = clone
     df = diff
     dfi = !sh -c 'arc diff '"'"':!$1'"'"''

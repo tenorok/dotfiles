@@ -62,3 +62,7 @@ function arc_mount {
     arc mount --mount arcadia2/ --store store2/ --object-store objects/
     cd -
 }
+
+function arcstc {
+    arc status -s $PWD | grep -E '^(.U|U.|AA|DD) ' | cut -d ' ' -f 2
+}
