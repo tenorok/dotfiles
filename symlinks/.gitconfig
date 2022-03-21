@@ -2,7 +2,7 @@
     name = tenorok
     email = mail@tenorok.ru
 [core]
-    editor = "micro"
+    editor = "code --wait"
     excludesfile = ~/.gitignore
     quotepath = false
 [color]

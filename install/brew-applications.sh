@@ -18,11 +18,13 @@ export APPLICATIONS=(
     iterm2
     xscope
     postman
+    mongodb-compass
     transmit
     telegram-desktop
     whatsapp
     slack
     skype
+    zoom
     teamviewer
     yandex
     yandex-disk
@@ -35,6 +37,8 @@ export APPLICATIONS=(
     spectacle
     apptivate
     clipy
+    caffeine
+    bartender
     keycastr
     musicbrainz-picard
     xld
