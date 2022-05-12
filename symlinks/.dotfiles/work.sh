@@ -66,3 +66,9 @@ function arc_mount {
 function arcstc {
     arc status -s $PWD | grep -E '^(.U|U.|AA|DD) ' | cut -d ' ' -f 2
 }
+
+function arcprune {
+    arc checkout trunk
+    arc pull -r
+    arc branch --merged | grep -v trunk | xargs -L 1 arc branch -d
+}
