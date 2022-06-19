@@ -29,7 +29,6 @@ export APPLICATIONS=(
     yandex
     yandex-disk
     dropbox
-    transmission
     vlc
     appzapper
     imageoptim
