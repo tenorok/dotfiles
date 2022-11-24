@@ -1,4 +1,4 @@
-alias sdev="ssh -Y -X tenorok-dev.sas.yp-c.yandex.net"
+alias sdev="ssh -Y -X tenorok-dev2.man.yp-c.yandex.net"
 
 alias npmw="npm config set registry http://registry.npmjs.org"
 alias npmy="npm config set registry http://npm.yandex-team.ru"
