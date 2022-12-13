@@ -1,4 +1,5 @@
-alias sdev="ssh -Y -X tenorok-dev2.man.yp-c.yandex.net"
+alias sdev="ssh -Y -X tenorok-dev.sas.yp-c.yandex.net"
+alias sdev2="ssh -Y -X tenorok-dev2.man.yp-c.yandex.net"
 
 alias npmw="npm config set registry http://registry.npmjs.org"
 alias npmy="npm config set registry http://npm.yandex-team.ru"
@@ -54,6 +55,22 @@ function web4_clean {
     npm ci
     npm run deps
     npm run build
+}
+
+function goods_clean {
+    arc cleanup
+    arc prefetch-files .
+    npm ci
+    npm run build
+}
+
+function yandex_clean {
+    rm -rf ~/.yandex-int/kotik/cache/
+    rm -rf ~/.yandex-int/.locks/
+    rm -rf ~/.yandex-int/logs/
+    rm -rf ~/.yandex-int/sandbox-resources/
+    cd ~/arc/arcadia && arc gc
+    cd ~/arc/arcadia2 && arc gc
 }
 
 function arc_mount {

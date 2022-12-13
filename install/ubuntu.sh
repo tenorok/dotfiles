@@ -1,4 +1,5 @@
 sudo -v # ask for password only at the beginning
+sudo chown -R $(whoami) /usr/local
 
 ln -sfn ${pwd}/tmux.conf ~/.tmux.conf
 add-apt-repository ppa:git-core/ppa
@@ -12,6 +13,7 @@ shopt -s globstar
 
 NVM_DIR=$DOTFILES/nvm curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 include $NVM_DIR/nvm.sh
+nvm install --lts
 
 go get -u github.com/gokcehan/lf
 ln -sfn $(HOME)/projects/go/bin/lf /usr/local/bin/micro

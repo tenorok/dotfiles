@@ -9,7 +9,7 @@
 Перед установкой в MacOS необходимо наличие [OS X Developer Tools](https://developer.apple.com/technologies/tools/).
 
 ```
-./install/common.sh
+./install/before.sh
 
 # Генерация ssh-ключа
 ./install/ssh-keygen.sh
@@ -17,13 +17,15 @@
 ./install/ssh-keygen.sh tenorok@yandex-team.ru id_yandex
 
 ./install/osx.sh
+./install/after.sh
 ```
 
 ### Ubuntu
 
 ```
-./install/common.sh
+./install/before.sh
 ./install/ubuntu.sh
+./install/after.sh
 ```
 
 ## Atom
