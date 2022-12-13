@@ -1,5 +1,5 @@
-alias sdev="ssh -Y -X tenorok-dev.sas.yp-c.yandex.net"
-alias sdev2="ssh -Y -X tenorok-dev2.man.yp-c.yandex.net"
+alias sdev="ssh -Y -X tenorok-dev.man.yp-c.yandex.net"
+alias sdev2="ssh -Y -X tenorok-dev2.vla.yp-c.yandex.net"
 
 alias npmw="npm config set registry http://registry.npmjs.org"
 alias npmy="npm config set registry http://npm.yandex-team.ru"
@@ -48,11 +48,7 @@ function kotik_testing() {
 
 function web4_clean {
     arc cleanup
-    cd ../../
-    npm ci
-    cd -
     arc prefetch-files .
-    npm ci
     npm run deps
     npm run build
 }
@@ -60,7 +56,7 @@ function web4_clean {
 function goods_clean {
     arc cleanup
     arc prefetch-files .
-    npm ci
+    npm run deps
     npm run build
 }
 

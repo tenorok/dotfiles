@@ -18,6 +18,9 @@ export GO15VENDOREXPERIMENT=1
 export DOTFILES=$HOME/.dotfiles
 export MICRO_CONFIG_HOME=$HOME/.micro
 
+export NVM_DIR=~/.nvm
+export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist/
+
 # Раскрывать глобы
 shopt -s globstar
 
@@ -41,12 +44,6 @@ fi
 
 # GIT
 gitDefault
-
-# NVM нужно инициализировать до использования NPM
-export NVM_DIR=~/.nvm
-export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist/
-include $(brew --prefix)/opt/nvm/nvm.sh
-include $(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm
 
 # NPM
 NPMDefault

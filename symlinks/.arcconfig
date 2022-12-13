@@ -1,5 +1,5 @@
 [core]
-    editor = "vim"
+    editor = "micro"
 [color]
     branch = auto
     diff = auto
