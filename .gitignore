@@ -3,4 +3,5 @@ symlinks/.dotfiles/ondir-scripts.sh
 symlinks/.dotfiles/git-completion.sh
 
 symlinks/.micro/*
+!symlinks/.micro/bindings.json
 !symlinks/.micro/settings.json
