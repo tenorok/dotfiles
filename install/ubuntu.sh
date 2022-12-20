@@ -25,3 +25,8 @@ ln -sfn $(HOME)/projects/go/bin/lf /usr/local/bin/micro
 
 curl https://getmic.ro | bash
 mv ./micro /usr/local/bin/micro
+
+if [[ -d ~/yandex ]]; then
+    echo 'Copy token from https://oauth.yandex-team.ru/authorize?response_type=token&client_id=630b6794f55a4d9abaa4511eb06d2c5e'
+    echo 'And paste it to $HOME/.config/surfwax/token'
+fi
