@@ -56,7 +56,7 @@ function web4_clean {
 function goods_clean {
     arc cleanup
     arc prefetch-files .
-    npm run deps
+    npm ci
     npm run build
 }
 
