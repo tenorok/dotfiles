@@ -49,15 +49,15 @@ function kotik_testing() {
 function web4_clean {
     arc cleanup
     arc prefetch-files .
-    npm run deps
-    npm run build
+    pnpm run deps
+    pnpm run build
 }
 
 function goods_clean {
     arc cleanup
     arc prefetch-files .
-    npm ci
-    npm run build
+    pnpm i
+    pnpm build
 }
 
 function yandex_clean {
