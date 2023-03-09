@@ -43,4 +43,5 @@ export APPLICATIONS=(
     xld
     font-fira-code
     ffmpeg
+    betterdisplay
 )
