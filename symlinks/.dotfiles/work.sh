@@ -47,6 +47,11 @@ function kotik_testing() {
     set +x
 }
 
+function p_clean {
+	rm -rf ~/.pnpm-virtual-store/
+	pnpm store prune
+}
+
 function web4_clean {
     arc cleanup
     arc prefetch-files .
@@ -59,6 +64,12 @@ function goods_clean {
     arc prefetch-files .
     pnpm i
     pnpm build
+}
+
+function ecomcom_clean {
+	arc cleanup
+	arc prefetch-files .
+	pnpm i
 }
 
 function yandex_clean {

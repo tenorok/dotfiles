@@ -20,7 +20,6 @@
 [branch "trunk"]
     allowCommit = false
 [alias]
-    cp = cherry-pick
     st = status -s
     cl = clone
     df = diff
