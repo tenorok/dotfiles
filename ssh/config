@@ -6,6 +6,8 @@ Host *
     ForwardAgent yes
     ForwardX11 yes
     ForwardX11Trusted yes
+    XAuthLocation /opt/X11/bin/xauth
+    HostkeyAlgorithms +ssh-rsa
 
 # github.com
 Host github.com

@@ -15,6 +15,7 @@
     "atomic_save": false,
     "ensure_newline_at_eof_on_save": true,
     "trim_trailing_white_space_on_save": true,
+    "mini_diff": false,
 
     "folder_exclude_patterns": [
         ".git",
