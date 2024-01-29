@@ -37,3 +37,24 @@
     cob = !sh -c 'arc co -b users/$USER/$0'
     pushu = !arc push -u $(arc branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
     prp = pr create --push
+
+[pre-commit-hook "search-interfaces/oceania/projects/goods"]
+    arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit
+
+[commit-msg-hook "search-interfaces/oceania/projects/goods"]
+    arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
+
+[merge]
+    renames = true
+
+[pre-commit-hook "search-interfaces/oceania/projects/web4"]
+    arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit
+
+[commit-msg-hook "search-interfaces/oceania/projects/web4"]
+    arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
+
+[pre-commit-hook "search-interfaces/oceania"]
+    arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit
+
+[commit-msg-hook "search-interfaces/oceania"]
+    arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
