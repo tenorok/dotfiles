@@ -52,7 +52,6 @@ NPMDefault
 include ~/.rvm/scripts/rvm
 
 include $DOTFILES/git-completion.sh
-include /usr/local/etc/profile.d/bash_completion.sh
 include $DOTFILES/runjs.completion.sh
 include $DOTFILES/npm.completion.sh
 

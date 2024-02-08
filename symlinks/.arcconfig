@@ -19,6 +19,8 @@
     untracked = cyan
 [branch "trunk"]
     allowCommit = false
+[merge]
+    renames = true
 [alias]
     st = status -s
     cl = clone
@@ -43,9 +45,6 @@
 
 [commit-msg-hook "search-interfaces/oceania/projects/goods"]
     arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
-
-[merge]
-    renames = true
 
 [pre-commit-hook "search-interfaces/oceania/projects/web4"]
     arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit

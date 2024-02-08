@@ -9,6 +9,8 @@ alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew 
 # M1
 [ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
+include $(brew --prefix)/etc/bash_completion
+
 # NVM нужно инициализировать до использования NPM
 include $(brew --prefix)/opt/nvm/nvm.sh
 include $(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm
