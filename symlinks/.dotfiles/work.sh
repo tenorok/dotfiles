@@ -54,14 +54,14 @@ function p_clean {
 
 function web4_clean {
     arc cleanup
-    arc prefetch-files .
+    arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
     pnpm run deps
     pnpm run build
 }
 
 function goods_clean {
     arc cleanup
-    arc prefetch-files .
+    arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
     pnpm i
     pnpm build
 }
