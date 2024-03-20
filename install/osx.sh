@@ -21,6 +21,10 @@ done
 
 brew cleanup
 
+# Damaged App Fix
+# https://dev.to/pixelrena/installing-chromium-on-mac-apple-m2-pro-tutorial-4i4i
+xattr -cr /Applications/Chromium.app
+
 mkdir ~/.nvm
 cp ./preferences/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
 git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light

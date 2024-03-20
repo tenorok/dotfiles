@@ -26,6 +26,7 @@ export APPLICATIONS=(
     skype
     zoom
     teamviewer
+    chromium
     yandex
     yandex-disk
     dropbox
