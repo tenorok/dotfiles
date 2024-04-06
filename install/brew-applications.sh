@@ -1,7 +1,7 @@
 export APPLICATIONS=(
     git
     git-lfs
-    bash-completion@2
+    bash-completion
     nvm
     go
     lf
