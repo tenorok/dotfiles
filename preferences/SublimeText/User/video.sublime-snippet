@@ -1,0 +1,7 @@
+<snippet>
+    <description>Вставка video для review</description>
+    <tabTrigger>video</tabTrigger>
+    <content><![CDATA[
+<details><summary>🎥</summary><video src="${1}" width="640" height="480" controls="controls">Ваш браузер не поддерживает это видео. <a href="${1}" target="_blank">Скачайте видео</a></video></details>
+]]></content>
+</snippet>

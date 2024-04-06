@@ -1,0 +1,7 @@
+<snippet>
+    <description>Вставка details для review</description>
+    <tabTrigger>detail</tabTrigger>
+    <content><![CDATA[
+<details><summary>${1}</summary>${2}</details>
+]]></content>
+</snippet>

@@ -29,3 +29,6 @@ npm-debug.log
 
 # VSCode
 .history
+
+# Internal
+preferences/SublimeText/User/frontend-light
