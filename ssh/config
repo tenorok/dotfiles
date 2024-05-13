@@ -1,4 +1,4 @@
-IdentityFile ~/.ssh/id_rsa
+IdentityFile ~/.ssh/id_ed25519
 
 Host *
     UseKeychain yes
@@ -8,9 +8,3 @@ Host *
     ForwardX11Trusted yes
     XAuthLocation /opt/X11/bin/xauth
     HostkeyAlgorithms +ssh-rsa
-
-# github.com
-Host github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa
