@@ -35,7 +35,7 @@
     cleanup = clean -xd
     lg = log --oneline --graph
     lgc = log --oneline .
-    lgn = "!arc log --oneline --graph --max-count $1"
+    lgn = !sh -c 'arc log --oneline --graph --max-count $0'
     cob = !sh -c 'arc co -b users/$USER/$0'
     pushu = !arc push -u $(arc branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
     prp = pr create --push

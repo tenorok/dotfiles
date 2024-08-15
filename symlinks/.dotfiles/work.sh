@@ -82,7 +82,7 @@ function yandex_clean {
 }
 
 function arc_mount {
-    cd ~/arc/
+    cd ~/
     arc mount --mount arcadia/ --store store/ --object-store objects/
     arc mount --mount arcadia2/ --store store2/ --object-store objects/
     cd -
