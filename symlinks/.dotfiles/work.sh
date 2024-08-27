@@ -81,10 +81,15 @@ function yandex_clean {
     cd ~/arc/arcadia2 && arc gc
 }
 
+function arc_clean {
+    arc br --merged trunk | xargs arc br -d
+}
+
 function arc_mount {
     cd ~/
     arc mount --mount arcadia/ --store store/ --object-store objects/
     arc mount --mount arcadia2/ --store store2/ --object-store objects/
+    arc mount --mount arcadia3/ --store store3/ --object-store objects/
     cd -
 }
 
