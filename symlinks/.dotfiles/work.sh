@@ -77,8 +77,9 @@ function yandex_clean {
     rm -rf ~/.yandex-int/.locks/
     rm -rf ~/.yandex-int/logs/
     rm -rf ~/.yandex-int/sandbox-resources/
-    cd ~/arc/arcadia && arc gc
-    cd ~/arc/arcadia2 && arc gc
+    cd ~/arcadia && arc gc
+    cd ~/arcadia2 && arc gc
+    cd ~/arcadia3 && arc gc
 }
 
 function arc_clean {
