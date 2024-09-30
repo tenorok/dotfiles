@@ -2,6 +2,6 @@
     <description>Вставка image для review</description>
     <tabTrigger>img</tabTrigger>
     <content><![CDATA[
-<details><summary>📸</summary><img src="${1}" width="400"/></details>
+<details><summary>📸 скрин</summary><img src="${1}" width="400"/></details>
 ]]></content>
 </snippet>
