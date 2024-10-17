@@ -57,3 +57,9 @@
 
 [commit-msg-hook "search-interfaces/oceania"]
     arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
+
+[commit-msg-hook "search-interfaces/cycletime-collector"]
+    arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
+
+[pre-commit-hook "search-interfaces/cycletime-collector"]
+    arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit

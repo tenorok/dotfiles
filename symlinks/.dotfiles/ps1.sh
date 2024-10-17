@@ -10,7 +10,7 @@ UNDERLINE="\e[4m"
 VCS="git"
 
 function vcs_color {
-  local vcs_status="$($VCS status 2> /dev/null)"
+  local vcs_status="$($VCS status --no-ahead-behind 2> /dev/null)"
 
   if [[ $vcs_status =~ "nothing to commit" ]]; then
     echo -e $GREEN # Clean state
