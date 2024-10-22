@@ -30,14 +30,19 @@ function vcs_state {
 
   local commit_local=$($VCS rev-parse $branch 2> /dev/null)
   local commit_remote=$($VCS rev-parse $remote_branch 2> /dev/null)
-  local commit_base=$($VCS merge-base $branch $remote_branch 2> /dev/null)
 
   if [[ ${#commit_local} -gt 0 && ${#commit_remote} -gt 0 && $commit_local = $commit_remote ]]; then
     echo ""
-  elif [[ ${#commit_local} -gt 0 && ${#commit_base} -gt 0 && $commit_local = $commit_base ]]; then
-    echo " ↻" # Need to rebase
+    return
   elif [[ ${#commit_local} -gt 0 && -z $commit_remote ]]; then
     echo " ⛢" # Untracked branch
+    return
+  fi
+
+  local commit_base=$($VCS merge-base $branch $remote_branch 2> /dev/null)
+
+  if [[ ${#commit_local} -gt 0 && ${#commit_base} -gt 0 && $commit_local = $commit_base ]]; then
+    echo " ↻" # Need to rebase
   elif [[ ${#commit_remote} -gt 0 && ${#commit_base} -gt 0 && $commit_remote = $commit_base ]]; then
     echo " ↑" # Need to push
   elif [[ ${#commit_local} -gt 0 && ${#commit_remote} -gt 0 && ${#commit_base} -gt 0 ]]; then
