@@ -57,6 +57,7 @@ function web4_clean {
     arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
     pnpm run deps
     pnpm run build
+    pnpm run generate:vscode-settings
 }
 
 function goods_clean {
