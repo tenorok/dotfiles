@@ -1,4 +1,5 @@
 alias l='ls -lAhG'
+alias p="pnpm"
 alias getchmod='stat -f "%OLp"'
 alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Size}}"'
 
