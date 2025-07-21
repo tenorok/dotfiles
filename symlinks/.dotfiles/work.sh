@@ -56,7 +56,8 @@ function web4_clean {
     arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
     pnpm run deps
     pnpm run build
-    pnpm run generate:vscode-settings --excludeBuild Y --vsicons Y
+    pnpm run generate:vscode-settings --paths web4 --excludeBuild Y --vsicons Y
+    $(arc root)/junk/tenorok/src/update-vscode-settings.ts
 }
 
 function goods_clean {
