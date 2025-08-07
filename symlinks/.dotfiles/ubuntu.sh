@@ -13,3 +13,6 @@ fi
 
 source $NVM_DIR/nvm.sh
 source $NVM_DIR/bash_completion
+
+# Автоматически использовать версию Node из .nvmrc
+nvm_use_oninit

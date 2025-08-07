@@ -28,6 +28,9 @@ fi
 include $(brew --prefix)/opt/nvm/nvm.sh
 include $(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm
 
+# Автоматически использовать версию Node из .nvmrc
+nvm_use_oninit
+
 # hub
 eval "$(hub alias -s)"
 

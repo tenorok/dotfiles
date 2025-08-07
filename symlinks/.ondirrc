@@ -1,20 +1,2 @@
-enter ~/yandex/*
-   export GIT_AUTHOR_NAME=tenorok
-   export GIT_AUTHOR_EMAIL=tenorok@yandex-team.ru
-   export GIT_COMMITTER_NAME=Artem Kurbatov
-   export GIT_COMMITTER_EMAIL=tenorok@yandex-team.ru
-   export GITHUB_HOST=github.yandex-team.ru
-   export NPM_CONFIG_REGISTRY=http://npm.yandex-team.ru
-   echo -e 'Git and NPM switched to \033[0;31mYandex'
-
-leave ~/yandex/*
-   gitDefault
-   NPMDefault
-   echo -e 'Git and NPM switched to \033[0;32mdefault'
-
-enter ~/yandex/browser/*
-   export PATH=/Users/tenorok/yandex/ios_tools/infra:/Users/tenorok/yandex/depot_tools:$PATH
-   export PS1="\[$YELLOW\]\w\[$GRAY\] › "
-
-enter ~/yandex/(web4(.*)?)/*
-   export PS1="\[$YELLOW\]\w\[$GRAY\] › "
+enter ~/arcadia([^/]*)/*
+   nvm_use

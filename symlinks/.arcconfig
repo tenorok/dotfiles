@@ -75,3 +75,9 @@
 
 [pre-commit-hook "search-interfaces/oceania/projects/alice"]
     arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit
+
+[commit-msg-hook "inspire/frontend"]
+    arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
+
+[pre-commit-hook "inspire/frontend"]
+    arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit

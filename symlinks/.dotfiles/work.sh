@@ -57,7 +57,16 @@ function web4_clean {
     pnpm run deps
     pnpm run build
     pnpm run generate:vscode-settings --paths web4 --excludeBuild Y --vsicons Y
-    $(arc root)/junk/tenorok/src/update-vscode-settings.ts
+    $(npm prefix -g)/bin/ts-node $(arc root)/junk/tenorok/src/update-vscode-settings.ts
+    cp ~/arcadia4/junk/tenorok/web4/.clinerules .
+}
+
+function inspire_clean {
+    arc cleanup
+    arc prefetch-files .
+    yarn install
+    cp -r ~/arcadia4/junk/tenorok/inspire/.vscode .
+    cp ~/arcadia4/junk/tenorok/inspire/.clinerules .
 }
 
 function goods_clean {

@@ -21,6 +21,24 @@ export MICRO_CONFIG_HOME=$HOME/.micro
 export NVM_DIR=~/.nvm
 export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist/
 
+# Автоматическое использование nvm при наличии .nvmrc
+nvm_use() {
+  if [[ -f ".nvmrc" ]]; then
+    # Проверяем, что nvm доступен (функция загружена)
+    if command -v nvm &> /dev/null; then
+      nvm use
+    fi
+  fi
+}
+
+# Автоматическое использование nvm при инициализации (избегая дублирования с ondir)
+nvm_use_oninit() {
+  case "$PWD" in
+    $HOME/arcadia*/*) ;;  # Не вызываем, ondir сделает это
+    *) nvm_use ;;         # Вызываем для всех остальных случаев
+  esac
+}
+
 # Раскрывать глобы
 shopt -s globstar
 
