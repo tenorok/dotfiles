@@ -79,7 +79,7 @@ then
 fi
 
 # Путь считывается в конце после всех добавлений.
-export PATH=./bin:node_modules/.bin:$PATH:$GOPATH/bin
+export PATH=./bin:node_modules/.bin:$HOME/bin:$PATH:$GOPATH/bin
 export ORIGINAL_PATH=$PATH
 
 include $DOTFILES/env.sh

@@ -57,16 +57,26 @@ function web4_clean {
     pnpm run deps
     pnpm run build
     pnpm run generate:vscode-settings --paths web4 --excludeBuild Y --vsicons Y
-    $(npm prefix -g)/bin/ts-node $(arc root)/junk/tenorok/src/update-vscode-settings.ts
-    cp ~/arcadia4/junk/tenorok/web4/.clinerules .
+    $(npm prefix -g)/bin/ts-node $(arc root)/junk/tenorok/projects-settings/src/update-vscode-settings.ts
+    cp ~/arcadia4/junk/tenorok/projects-settings/web4/.clinerules .
+}
+
+function reef_clean {
+    arc cleanup
+    arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
+    pnpm run deps
+    pnpm run build
+    cp -r ~/arcadia4/junk/tenorok/projects-settings/reef/vscode/settings.json .vscode/settings.json
+    $(npm prefix -g)/bin/ts-node ~/arcadia4/junk/tenorok/projects-settings/src/update-vscode-settings.ts --project reef --whitelist-teams Freshness,Realty,UniSearch,Goods
+    cp ~/arcadia4/junk/tenorok/projects-settings/reef/.clinerules .
 }
 
 function inspire_clean {
     arc cleanup
     arc prefetch-files .
     yarn install
-    cp -r ~/arcadia4/junk/tenorok/inspire/.vscode .
-    cp ~/arcadia4/junk/tenorok/inspire/.clinerules .
+    cp -r ~/arcadia4/junk/tenorok/projects-settings/inspire/vscode/settings.json .vscode/settings.json
+    cp ~/arcadia4/junk/tenorok/projects-settings/inspire/.clinerules .
 }
 
 function goods_clean {
