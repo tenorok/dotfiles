@@ -45,3 +45,33 @@ vault_unseal() {
 
     echo "✅ Vault успешно распечатан!"
 }
+
+convert_wma_to_m4a() {
+    local input_dir="$1"
+    local output_dir="$2"
+
+    if [[ -z "$input_dir" || -z "$output_dir" ]]; then
+        echo "Usage: convert_wma_to_m4a <input_directory> <output_directory>"
+        return 1
+    fi
+
+    if ! command -v ffmpeg &> /dev/null; then
+        echo "❌ Ошибка: требуется установить ffmpeg"
+        echo "🔗 https://ffmpeg.org/download.html"
+        return 1
+    fi
+
+    mkdir -p "$output_dir"
+
+    for f in "$input_dir"/*.wma; do
+        if [[ -f "$f" ]]; then
+            local filename=$(basename "$f" .wma)
+            echo "Конвертирую: $f..."
+            ffmpeg -i "$f" -vn -c:a alac "$output_dir/${filename}.m4a"
+        else
+            echo "⚠️  Файл не найден: $f"
+        fi
+    done
+
+    echo "✅ Готово! Все файлы лежат в папке '$output_dir'."
+}
