@@ -46,12 +46,13 @@ vault_unseal() {
     echo "✅ Vault успешно распечатан!"
 }
 
-convert_wma_to_m4a() {
+convert_audio_to_m4a() {
     local input_dir="$1"
     local output_dir="$2"
+    local extension="$3"
 
-    if [[ -z "$input_dir" || -z "$output_dir" ]]; then
-        echo "Usage: convert_wma_to_m4a <input_directory> <output_directory>"
+    if [[ -z "$input_dir" || -z "$output_dir" || -z "$extension" ]]; then
+        echo "Usage: convert_${extension}_to_m4a <input_directory> <output_directory>"
         return 1
     fi
 
@@ -63,9 +64,9 @@ convert_wma_to_m4a() {
 
     mkdir -p "$output_dir"
 
-    for f in "$input_dir"/*.wma; do
+    for f in "$input_dir"/*.$extension; do
         if [[ -f "$f" ]]; then
-            local filename=$(basename "$f" .wma)
+            local filename=$(basename "$f" .$extension)
             echo "Конвертирую: $f..."
             ffmpeg -i "$f" -vn -c:a alac "$output_dir/${filename}.m4a"
         else
@@ -74,4 +75,12 @@ convert_wma_to_m4a() {
     done
 
     echo "✅ Готово! Все файлы лежат в папке '$output_dir'."
+}
+
+convert_wma_to_m4a() {
+    convert_audio_to_m4a "$1" "$2" "wma"
+}
+
+convert_flac_to_m4a() {
+    convert_audio_to_m4a "$1" "$2" "flac"
 }
