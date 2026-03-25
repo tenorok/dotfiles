@@ -35,3 +35,8 @@ nvm_use_oninit
 eval "$(hub alias -s)"
 
 include $DOTFILES/ondir-scripts.sh
+
+# Ollama
+export OLLAMA_NUM_PARALLEL=4
+export OLLAMA_MAX_LOADED_MODELS=2
+export OLLAMA_KEEP_ALIVE=30m

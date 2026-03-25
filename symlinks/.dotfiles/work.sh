@@ -56,27 +56,27 @@ function web4_clean {
     arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
     pnpm run deps
     pnpm run build
-    pnpm run generate:vscode-settings --paths web4 --excludeBuild Y --vsicons Y
+    node ../../packages/dx-collection/generators/VSCodeSettings/cli.js --paths web4 --hideDotBuild --vsicons --jsonSchema
     $(npm prefix -g)/bin/ts-node $(arc root)/junk/tenorok/projects-settings/src/update-vscode-settings.ts
-    cp ~/arcadia4/junk/tenorok/projects-settings/web4/.clinerules .
+    cp $(arc root)/junk/tenorok/projects-settings/web4/.clinerules .
 }
 
 function reef_clean {
     arc cleanup
     arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
     pnpm run deps
-    pnpm run build
-    cp -r ~/arcadia4/junk/tenorok/projects-settings/reef/vscode/settings.json .vscode/settings.json
-    $(npm prefix -g)/bin/ts-node ~/arcadia4/junk/tenorok/projects-settings/src/update-vscode-settings.ts --project reef --whitelist-teams Freshness,Realty,UniSearch,Goods
-    cp ~/arcadia4/junk/tenorok/projects-settings/reef/.clinerules .
+    node ../../packages/dx-collection/generators/VSCodeSettings/cli.js --paths reef --hideDotBuild --vsicons --jsonSchema
+    $(npm prefix -g)/bin/ts-node $(arc root)/junk/tenorok/projects-settings/src/update-vscode-settings.ts --project reef --whitelist-teams Freshness,Realty,UniSearch,Goods
+    cp $(arc root)/junk/tenorok/projects-settings/reef/.clinerules .
+    pnpm run flag:build
 }
 
 function inspire_clean {
     arc cleanup
     arc prefetch-files .
     yarn install
-    cp -r ~/arcadia4/junk/tenorok/projects-settings/inspire/vscode/settings.json .vscode/settings.json
-    cp ~/arcadia4/junk/tenorok/projects-settings/inspire/.clinerules .
+    cp -r $(arc root)/junk/tenorok/projects-settings/inspire/vscode/settings.json .vscode/settings.json
+    cp $(arc root)/junk/tenorok/projects-settings/inspire/.clinerules .
 }
 
 function goods_clean {
@@ -86,10 +86,12 @@ function goods_clean {
     pnpm build
 }
 
-function ecomcom_clean {
+function alice_clean {
 	arc cleanup
-	arc prefetch-files .
-	pnpm i
+	arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
+	pnpm deps
+    pnpm build
+    node ../../packages/dx-collection/generators/VSCodeSettings/cli.js --paths alice --hideDotBuild --vsicons --jsonSchema
 }
 
 function yandex_clean {
@@ -100,6 +102,8 @@ function yandex_clean {
     cd ~/arcadia && arc gc
     cd ~/arcadia2 && arc gc
     cd ~/arcadia3 && arc gc
+    cd ~/arcadia4 && arc gc
+    cd ~/arcadia5 && arc gc
 }
 
 function arc_clean {
@@ -108,10 +112,19 @@ function arc_clean {
 
 function arc_mount {
     cd ~/
+
     arc mount --mount arcadia/ --store store/ --object-store objects/
     arc mount --mount arcadia2/ --store store2/ --object-store objects/
     arc mount --mount arcadia3/ --store store3/ --object-store objects/
     arc mount --mount arcadia4/ --store store4/ --object-store objects/
+    arc mount --mount arcadia5/ --store store5/ --object-store objects/
+
+    # Запуск MCP-серверов
+    # DevTools
+    ./arcadia/ya make -r ~/arcadia/devtools/mcp/bin
+    # Tracker, Wiki
+    ./arcadia/ya make -r ~/arcadia/ml/infra/model_context_protocol/tools/proxy_client
+
     cd -
 }
 
