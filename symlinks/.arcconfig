@@ -39,6 +39,7 @@
     cob = !sh -c 'arc co -b users/$USER/$0'
     pushu = !arc push -u $(arc branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
     prp = pr create --push
+    rbt = !sh -c 'arc pull trunk && arc rebase trunk && arc log --oneline --graph --max-count 10'
 
 [pre-commit-hook "search-interfaces/oceania/projects/goods"]
     arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit

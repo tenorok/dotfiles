@@ -48,6 +48,7 @@ function kotik_testing() {
 
 function p_clean {
 	rm -rf ~/.pnpm-virtual-store/
+	rm -rf ~/.pnpm-store
 	pnpm store prune
 }
 
