@@ -1,4 +1,4 @@
-export EDITOR='code -n'
+export EDITOR='cursor -n'
 
 alias cat='ccat --bg=dark'
 alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'

@@ -22,12 +22,9 @@ export APPLICATIONS=(
     transmit
     telegram-desktop
     whatsapp
-    slack
-    skype
     zoom
-    teamviewer
     chromium
-    yandex
+    vivaldi
     yandex-disk
     dropbox
     vlc
@@ -44,5 +41,4 @@ export APPLICATIONS=(
     xld
     font-fira-code
     ffmpeg
-    betterdisplay
 )
