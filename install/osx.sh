@@ -10,8 +10,6 @@ brew install bash
 echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells
 chsh -s $(brew --prefix)/bin/bash # set default shell
 
-brew tap homebrew/cask-fonts
-
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 source $DIR/brew-applications.sh
 
@@ -26,6 +24,11 @@ brew cleanup
 xattr -cr /Applications/Chromium.app
 
 mkdir ~/.nvm
-rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-git clone https://github.com/fman7/frontend-light/ ./preferences/SublimeText/frontend-light
-ln -s $(pwd)/preferences/SublimeText/User/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
+
+# Sublime Text 4
+ST_PACKAGES=~/Library/Application\ Support/Sublime\ Text/Packages
+rm -rf "$ST_PACKAGES/User/"
+if git ls-remote https://github.com/fman7/frontend-light/ &>/dev/null; then
+    git clone https://github.com/fman7/frontend-light/ ./preferences/SublimeText/frontend-light
+fi
+ln -s $(pwd)/preferences/SublimeText/User/ "$ST_PACKAGES/"

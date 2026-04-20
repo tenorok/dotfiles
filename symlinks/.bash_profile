@@ -4,13 +4,11 @@ export LANG=ru_RU.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export TERM=xterm-color
+export TERM=xterm-256color
 export COLORTERM=truecolor
 export MICRO_TRUECOLOR=1
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacdx
-
-export DISPLAY=:0.0
 
 export GOPATH=$HOME/projects/go
 export GO15VENDOREXPERIMENT=1
@@ -20,6 +18,14 @@ export MICRO_CONFIG_HOME=$HOME/.micro
 
 export NVM_DIR=~/.nvm
 export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist/
+
+# История
+HISTSIZE=100000
+HISTFILESIZE=200000
+HISTCONTROL=ignoreboth:erasedups
+HISTTIMEFORMAT='%F %T  '
+shopt -s histappend cmdhist checkwinsize
+PROMPT_COMMAND='history -a'
 
 # Автоматическое использование nvm при наличии .nvmrc
 nvm_use() {

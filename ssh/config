@@ -1,13 +1,15 @@
 IdentityFile ~/.ssh/id_ed25519
 
 Host *
-    UseKeychain yes
     AddKeysToAgent yes
     ForwardAgent yes
-    ForwardX11 yes
-    ForwardX11Trusted yes
-    XAuthLocation /opt/X11/bin/xauth
-    HostkeyAlgorithms +ssh-rsa
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    HashKnownHosts yes
+
+# UseKeychain — macOS-only опция (Keychain интеграция)
+Match host * exec "uname | grep -q Darwin"
+    UseKeychain yes
 
 # github.com
 Host github.com

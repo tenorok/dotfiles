@@ -2,7 +2,6 @@
     name = tenorok
     email = mail@tenorok.ru
 [core]
-    editor = "cursor --wait"
     excludesfile = ~/.gitignore
     quotepath = false
 [color]
@@ -22,16 +21,31 @@
     added = yellow
     changed = green
     untracked = cyan
+[init]
+    defaultBranch = main
+[pull]
+    rebase = true
+[rebase]
+    autoStash = true
+    autoSquash = true
+[rerere]
+    enabled = true
+[commit]
+    verbose = true
 [diff]
     noprefix = true
+    mnemonicPrefix = true
+    colorMoved = default
+    renames = copies
 [merge]
     ff = no
 [branch]
     autosetuprebase = always
+    sort = -committerdate
 [fetch]
     prune = true
-[push]
-    default = simple
+[column]
+    ui = auto
 [alias]
     cp = cherry-pick
     st = status -s

@@ -41,6 +41,29 @@
 
 Для переключения на рабочее окружение нужно создать директорию `mkdir ~/yandex`.
 
+## Секреты
+
+API-ключи хранятся в личном [HashiCorp Vault](https://developer.hashicorp.com/vault) (KV v2, движок `kv/`).
+
+При каждом открытии shell скрипт `env.sh` автоматически получает ключи из Vault и кэширует их в `~/.cache/openrouter.token` (TTL 7 дней). Если Vault недоступен (не дома / нет VPN / запечатан) — используется кэш.
+
+### Первичная настройка
+
+1. Убедиться, что Vault запущен и распечатан (`vault_unseal`).
+2. Войти: `vault login`.
+3. Положить ключ OpenRouter:
+   ```
+   vault kv put kv/openrouter api_key='sk-or-v1-...'
+   ```
+4. Открыть новый shell — ключ подхватится автоматически.
+
+### Обновление ключа
+
+```
+vault kv put kv/openrouter api_key='sk-or-v1-новый-ключ'
+load_openrouter_key  # обновить в текущем shell без перезапуска
+```
+
 ## Atom
 
 Сохранить установленные плагины в файл:

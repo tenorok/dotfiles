@@ -1,13 +1,16 @@
 export EDITOR='cursor -n'
+export GIT_EDITOR='cursor --wait'
 
-alias cat='ccat --bg=dark'
-alias updatecask='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
+alias brewup='brew update && brew upgrade && brew cleanup'
 
 # brew
 # Intel
 [ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
 # M1
 [ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# bat как замена cat (после инициализации brew, чтобы бинарь был в PATH)
+command -v bat &>/dev/null && alias cat='bat --paging=never --style=plain'
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-bash
 if type brew &>/dev/null
@@ -30,9 +33,6 @@ include $(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm
 
 # Автоматически использовать версию Node из .nvmrc
 nvm_use_oninit
-
-# hub
-eval "$(hub alias -s)"
 
 include $DOTFILES/ondir-scripts.sh
 

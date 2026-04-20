@@ -1,4 +1,5 @@
 export EDITOR='micro'
+export GIT_EDITOR='micro'
 
 # https://code.visualstudio.com/docs/remote/troubleshooting#_setting-up-the-ssh-agent
 if [ -z "$SSH_AUTH_SOCK" ]; then
