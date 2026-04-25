@@ -1,10 +1,10 @@
 setopt PROMPT_SUBST
 autoload -U colors && colors
 
-VCS="git"
+PROMPT_VCS="git"
 
-_vcs_color() {
-  local vcs_status="$($VCS status --no-ahead-behind 2>/dev/null)"
+prompt_vcs_color() {
+  local vcs_status="$($PROMPT_VCS status --no-ahead-behind 2>/dev/null)"
   if [[ $vcs_status =~ "nothing to commit" ]]; then
     echo "%F{green}"
   else
@@ -12,17 +12,17 @@ _vcs_color() {
   fi
 }
 
-_vcs_state() {
-  local branch=$(_vcs_branch $VCS)
+prompt_vcs_state() {
+  local branch=$(prompt_vcs_branch $PROMPT_VCS)
   local remote_branch
-  if [[ $VCS = "git" ]]; then
+  if [[ $PROMPT_VCS = "git" ]]; then
     remote_branch="@{u}"
   else
     remote_branch="arcadia/$(arc info 2>/dev/null | grep 'remote:' | sed -e 's/remote: \(.*\)/\1/')"
   fi
 
-  local commit_local=$($VCS rev-parse $branch 2>/dev/null)
-  local commit_remote=$($VCS rev-parse $remote_branch 2>/dev/null)
+  local commit_local=$($PROMPT_VCS rev-parse $branch 2>/dev/null)
+  local commit_remote=$($PROMPT_VCS rev-parse $remote_branch 2>/dev/null)
 
   if [[ ${#commit_local} -gt 0 && ${#commit_remote} -gt 0 && $commit_local = $commit_remote ]]; then
     echo ""
@@ -32,7 +32,7 @@ _vcs_state() {
     return
   fi
 
-  local commit_base=$($VCS merge-base $branch $remote_branch 2>/dev/null)
+  local commit_base=$($PROMPT_VCS merge-base $branch $remote_branch 2>/dev/null)
 
   if [[ ${#commit_local} -gt 0 && ${#commit_base} -gt 0 && $commit_local = $commit_base ]]; then
     echo " ↻"
@@ -43,40 +43,40 @@ _vcs_state() {
   fi
 }
 
-_vcs_branch() {
+prompt_vcs_branch() {
   $1 branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
-_git_branch() {
-  if [[ $(_vcs_branch "git") ]]; then
-    VCS="git"
+prompt_git_branch() {
+  if [[ $(prompt_vcs_branch "git") ]]; then
+    PROMPT_VCS="git"
     return 0
   fi
   return 1
 }
 
-_arc_branch() {
-  if [[ $(_vcs_branch "arc") ]]; then
-    VCS="arc"
+prompt_arc_branch() {
+  if [[ $(prompt_vcs_branch "arc") ]]; then
+    PROMPT_VCS="arc"
     return 0
   fi
   return 1
 }
 
-_VCSPS1() {
+prompt_vcs_ps1() {
   local vcs_info=""
-  if _git_branch || _arc_branch; then
-    vcs_info+=$(_vcs_color)
-    vcs_info+=" "$(_vcs_branch $VCS)
-    vcs_info+=$(_vcs_state)
+  if prompt_git_branch || prompt_arc_branch; then
+    vcs_info+=$(prompt_vcs_color)
+    vcs_info+=" "$(prompt_vcs_branch $PROMPT_VCS)
+    vcs_info+=$(prompt_vcs_state)
     vcs_info+="%f"
   fi
   echo $vcs_info
 }
 
-_build_prompt() {
+prompt_build() {
   local p=""
-  local vcs_part=$(_VCSPS1)
+  local vcs_part=$(prompt_vcs_ps1)
 
   # На сервере — показываем хост
   if [[ -f /usr/bin/hostnamectl ]]; then
@@ -98,4 +98,4 @@ _build_prompt() {
   print -Pn "\e]0;%1~\a"
 }
 
-add-zsh-hook precmd _build_prompt
+add-zsh-hook precmd prompt_build

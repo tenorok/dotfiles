@@ -16,7 +16,7 @@
     meta = yellow bold
     frag = magenta bold
     old = red
-    new = cyan
+    new = green
 [color "status"]
     added = yellow
     changed = green
@@ -50,7 +50,6 @@
     cp = cherry-pick
     st = status -s
     stc = diff --name-only --diff-filter=U
-    cl = clone
     ci = commit
     co = checkout
     br = branch
