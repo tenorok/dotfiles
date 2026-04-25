@@ -6,9 +6,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 brew upgrade
 
-brew install bash
-echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells
-chsh -s $(brew --prefix)/bin/bash # set default shell
+brew install zsh zsh-completions
+echo $(brew --prefix)/bin/zsh | sudo tee -a /etc/shells
+chsh -s $(brew --prefix)/bin/zsh
 
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 source $DIR/brew-applications.sh

@@ -1,2 +1,1 @@
-touch $(pwd)/symlinks/.dotfiles/npm.completion.sh
-npm completion > $(pwd)/symlinks/.dotfiles/npm.completion.sh
+echo "Setup complete. Open a new terminal to start using zsh."

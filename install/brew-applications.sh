@@ -1,7 +1,8 @@
 export APPLICATIONS=(
     git
     git-lfs
-    bash-completion
+    zsh-autosuggestions
+    zsh-syntax-highlighting
     nvm
     go
     lf

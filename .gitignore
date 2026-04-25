@@ -1,7 +1,6 @@
 symlinks/.dotfiles/npm.completion.sh
-symlinks/.dotfiles/ondir-scripts.sh
-symlinks/.dotfiles/git-completion.sh
-symlinks/.dotfiles/env.sh
+symlinks/.dotfiles/completions/git-completion.bash
+symlinks/.dotfiles/completions/_git
 
 symlinks/.micro/*
 !symlinks/.micro/bindings.json

@@ -5,9 +5,9 @@ alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}
 
 function gitst {
   if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1) ]; then
-    echo -e $GREEN"Up to date"
+    echo "%F{green}Up to date%f"
   else
-    echo -e $RED"Not up to date"
+    echo "%F{red}Not up to date%f"
   fi
 }
 
@@ -24,7 +24,7 @@ function NPMDefault {
 }
 
 if [[ -d ~/yandex ]]; then
-  include $DOTFILES/work.sh
+  include $DOTFILES/work.zsh
 else
-  include $DOTFILES/home.sh
+  include $DOTFILES/home.zsh
 fi

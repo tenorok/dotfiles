@@ -1,6 +1,6 @@
 # Dotfiles
 
-Быстрая настройка окружения на новой машине MacOS и Ubuntu.
+Быстрая настройка окружения на новой машине MacOS и Ubuntu. Shell: **zsh**.
 
 ## Установка
 
@@ -41,11 +41,28 @@
 
 Для переключения на рабочее окружение нужно создать директорию `mkdir ~/yandex`.
 
+## Структура конфигурации zsh
+
+| Файл | Когда загружается | Назначение |
+|------|-------------------|------------|
+| `~/.zshenv` | Всегда (в т.ч. неинтерактивный shell) | PATH, LANG, DOTFILES, NVM_DIR |
+| `~/.zprofile` | Login shell (Terminal/iTerm, SSH) | brew shellenv |
+| `~/.zshrc` | Интерактивный shell | История, плагины, prompt, aliases |
+
+Модули в `~/.dotfiles/`:
+- `prompt.zsh` — кастомный PROMPT с git/arc статусом
+- `aliases.zsh` — алиасы, gitDefault, NPMDefault
+- `osx.zsh` / `ubuntu.zsh` — настройки, специфичные для ОС
+- `home.zsh` / `work.zsh` — домашнее/рабочее окружение
+- `chpwd-hooks.zsh` — ondir + автовыбор Node через nvm при смене директории
+- `completions.zsh` — compinit, FPATH, git/arc/runjs completions
+- `env.zsh` — API-ключи из Vault
+
 ## Секреты
 
 API-ключи хранятся в личном [HashiCorp Vault](https://developer.hashicorp.com/vault) (KV v2, движок `kv/`).
 
-При каждом открытии shell скрипт `env.sh` автоматически получает ключи из Vault и кэширует их в `~/.cache/openrouter.token` (TTL 7 дней). Если Vault недоступен (не дома / нет VPN / запечатан) — используется кэш.
+При каждом открытии shell скрипт `env.zsh` автоматически получает ключи из Vault и кэширует их в `~/.cache/openrouter.token` (TTL 7 дней). Если Vault недоступен (не дома / нет VPN / запечатан) — используется кэш.
 
 ### Первичная настройка
 

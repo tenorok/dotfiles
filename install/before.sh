@@ -22,7 +22,11 @@ done
 
 shopt -u dotglob nullglob
 
-source ~/dotfiles/symlinks/.bash_profile
+# git-completion для zsh: обёртка + bash-источник
+mkdir -p "$(pwd)/symlinks/.dotfiles/completions"
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh \
+    --output "$(pwd)/symlinks/.dotfiles/completions/_git"
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash \
+    --output "$(pwd)/symlinks/.dotfiles/completions/git-completion.bash"
 
-curl https://raw.githubusercontent.com/alecthomas/ondir/master/scripts.sh --output $(pwd)/symlinks/.dotfiles/ondir-scripts.sh
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash --output $(pwd)/symlinks/.dotfiles/git-completion.sh
+echo "Restart your terminal to load zsh configuration."

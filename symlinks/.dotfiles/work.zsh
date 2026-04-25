@@ -1,5 +1,4 @@
 alias sdev="ssh tenorok-dev.klg.yp-c.yandex.net"
-alias sdev2="ssh tenorok-dev2.vla.yp-c.yandex.net"
 
 alias npmw="npm config set registry http://registry.npmjs.org"
 alias npmy="npm config set registry http://npm.yandex-team.ru"
@@ -9,12 +8,12 @@ alias npm-yandex-deps='npm i --registry="http://npm.yandex-team.ru" && npm run d
 function kotik_dev() {
     local i="${1:-1}"
 
-    local options="";
-    if [ "$2" == "prod" ]; then
+    local options=""
+    if [[ "$2" == "prod" ]]; then
         options+="DEV_SOURCE_HOST=yandex.ru"
     fi
 
-    if [ "$3" == "tap" ]; then
+    if [[ "$3" == "tap" ]]; then
         options+=" ECOM_TAP=true"
     fi
 
@@ -29,12 +28,12 @@ function kotik_dev() {
 function kotik_testing() {
     local i="${1:-1}"
 
-    local options="";
-    if [ "$2" == "prod" ]; then
+    local options=""
+    if [[ "$2" == "prod" ]]; then
         options+="DEV_SOURCE_HOST=yandex.ru"
     fi
 
-    if [ "$3" == "tap" ]; then
+    if [[ "$3" == "tap" ]]; then
         options+=" ECOM_TAP=true"
     fi
 
@@ -47,9 +46,9 @@ function kotik_testing() {
 }
 
 function p_clean {
-	rm -rf ~/.pnpm-virtual-store/
-	rm -rf ~/.pnpm-store
-	pnpm store prune
+    rm -rf ~/.pnpm-virtual-store/
+    rm -rf ~/.pnpm-store
+    pnpm store prune
 }
 
 function web4_clean {
@@ -88,9 +87,9 @@ function goods_clean {
 }
 
 function alice_clean {
-	arc cleanup
-	arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
-	pnpm deps
+    arc cleanup
+    arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
+    pnpm deps
     pnpm build
     node ../../packages/dx-collection/generators/VSCodeSettings/cli.js --paths alice --hideDotBuild --vsicons --jsonSchema
 }
