@@ -20,6 +20,14 @@ setopt EXTENDED_GLOB           # расширенные шаблоны (#, ^, ~)
 setopt NULL_GLOB               # не выдавать ошибку при пустом glob
 setopt INTERACTIVE_COMMENTS    # разрешить комментарии в интерактивном режиме
 
+# Клавиши Home/End (в iTerm это fn+left/right)
+bindkey '\e[H' beginning-of-line
+bindkey '\e[F' end-of-line
+bindkey '\eOH' beginning-of-line
+bindkey '\eOF' end-of-line
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
+
 # Хуки
 autoload -Uz add-zsh-hook
 
