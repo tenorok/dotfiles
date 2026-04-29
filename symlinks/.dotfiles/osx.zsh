@@ -10,7 +10,7 @@ command -v bat &>/dev/null && alias cat='bat --paging=never --style=plain'
 include $(brew --prefix 2>/dev/null)/opt/nvm/nvm.sh
 
 # Автоматически использовать версию Node из .nvmrc при старте shell
-nvm_use_oninit
+nvm_use
 
 # Ollama
 export OLLAMA_NUM_PARALLEL=4

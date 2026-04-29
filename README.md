@@ -54,7 +54,7 @@
 - `aliases.zsh` — алиасы, gitDefault, NPMDefault
 - `osx.zsh` / `ubuntu.zsh` — настройки, специфичные для ОС
 - `home.zsh` / `work.zsh` — домашнее/рабочее окружение
-- `chpwd-hooks.zsh` — ondir + автовыбор Node через nvm при смене директории
+- `chpwd-hooks.zsh` — автовыбор Node через nvm при смене директории
 - `completions.zsh` — compinit, FPATH, git/arc/runjs completions
 - `env.zsh` — API-ключи из Vault
 

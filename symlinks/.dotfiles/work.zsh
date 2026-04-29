@@ -58,7 +58,7 @@ function web4_clean {
     pnpm run build
     node ../../packages/dx-collection/generators/VSCodeSettings/cli.js --paths web4 --hideDotBuild --vsicons --jsonSchema
     $(npm prefix -g)/bin/ts-node $(arc root)/junk/tenorok/projects-settings/src/update-vscode-settings.ts
-    cp $(arc root)/junk/tenorok/projects-settings/web4/.clinerules .
+    ya tool aisuite cursor --preset goods/frontend/coda_oceania
 }
 
 function reef_clean {
@@ -67,7 +67,7 @@ function reef_clean {
     pnpm run deps
     node ../../packages/dx-collection/generators/VSCodeSettings/cli.js --paths reef --hideDotBuild --vsicons --jsonSchema
     $(npm prefix -g)/bin/ts-node $(arc root)/junk/tenorok/projects-settings/src/update-vscode-settings.ts --project reef --whitelist-teams Freshness,Realty,UniSearch,Goods
-    cp $(arc root)/junk/tenorok/projects-settings/reef/.clinerules .
+    ya tool aisuite cursor --preset goods/frontend/coda_oceania
     pnpm run flag:build
 }
 
@@ -76,14 +76,6 @@ function inspire_clean {
     arc prefetch-files .
     yarn install
     cp -r $(arc root)/junk/tenorok/projects-settings/inspire/vscode/settings.json .vscode/settings.json
-    cp $(arc root)/junk/tenorok/projects-settings/inspire/.clinerules .
-}
-
-function goods_clean {
-    arc cleanup
-    arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
-    pnpm i
-    pnpm build
 }
 
 function alice_clean {
@@ -92,6 +84,7 @@ function alice_clean {
     pnpm deps
     pnpm build
     node ../../packages/dx-collection/generators/VSCodeSettings/cli.js --paths alice --hideDotBuild --vsicons --jsonSchema
+    ya tool aisuite cursor --preset goods/frontend/coda_oceania
 }
 
 function yandex_clean {
@@ -119,11 +112,9 @@ function arc_mount {
     arc mount --mount arcadia4/ --store store4/ --object-store objects/
     arc mount --mount arcadia5/ --store store5/ --object-store objects/
 
-    # Запуск MCP-серверов
-    # DevTools
-    ./arcadia/ya make -r ~/arcadia/devtools/mcp/bin
-    # Tracker, Wiki
-    ./arcadia/ya make -r ~/arcadia/ml/infra/model_context_protocol/tools/proxy_client
+    # Сборка MCP-серверов
+    # Docs
+    ~/arcadia/ya make -r ~/arcadia/junk/amikita/mcp/docs
 
     cd -
 }

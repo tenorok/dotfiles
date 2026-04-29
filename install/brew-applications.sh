@@ -7,7 +7,6 @@ export APPLICATIONS=(
     go
     lf
     wget
-    ondir
     hub
     ccat
     ag

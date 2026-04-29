@@ -6,7 +6,7 @@ sudo apt-get update
 add-apt-repository ppa:git-core/ppa
 add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main restricted universe multiverse"
 sudo apt-get update -y
-sudo apt-get install -y git git-lfs tmux silversearcher-ag ondir golang zsh zsh-autosuggestions zsh-syntax-highlighting
+sudo apt-get install -y git git-lfs tmux silversearcher-ag golang zsh zsh-autosuggestions zsh-syntax-highlighting
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 export NVM_DIR="$HOME/.nvm"

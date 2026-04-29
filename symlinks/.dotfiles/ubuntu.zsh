@@ -15,4 +15,4 @@ source $NVM_DIR/nvm.sh
 source $NVM_DIR/bash_completion 2>/dev/null || true
 
 # Автоматически использовать версию Node из .nvmrc при старте shell
-nvm_use_oninit
+nvm_use
