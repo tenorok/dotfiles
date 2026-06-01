@@ -28,5 +28,5 @@ export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist/
 
 # Дедупликация PATH через zsh-массив path
 typeset -U path PATH
-path=(./bin node_modules/.bin $HOME/bin $path $GOPATH/bin)
+path=(./bin node_modules/.bin $HOME/bin $path $GOPATH/bin $HOME/.local/bin)
 export ORIGINAL_PATH=$PATH

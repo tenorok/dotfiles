@@ -94,3 +94,15 @@
 
 [pre-commit-hook "search-interfaces/oceania/packages/depot"]
     arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit
+
+[commit-msg-hook "search-interfaces/cycletime"]
+    arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
+
+[pre-commit-hook "search-interfaces/cycletime"]
+    arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit
+
+[commit-msg-hook "search-interfaces/cycletime/packages/arcanum-chart-data"]
+    arctic-husky-commit-msg = .arc/user_hooks/hooks/commit-msg
+
+[pre-commit-hook "search-interfaces/cycletime/packages/arcanum-chart-data"]
+    arctic-husky-pre-commit = .arc/user_hooks/hooks/pre-commit

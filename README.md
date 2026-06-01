@@ -56,30 +56,55 @@
 - `home.zsh` / `work.zsh` — домашнее/рабочее окружение
 - `chpwd-hooks.zsh` — автовыбор Node через nvm при смене директории
 - `completions.zsh` — compinit, FPATH, git/arc/runjs completions
-- `env.zsh` — API-ключи из Vault
+- `secrets.zsh` — загрузка API-ключей из `~/.secrets/env/`
 
 ## Секреты
 
-API-ключи хранятся в личном [HashiCorp Vault](https://developer.hashicorp.com/vault) (KV v2, движок `kv/`).
+Переменные окружения с токенами **не хранятся в репозитории**. При открытии shell `secrets.zsh` читает файлы из `~/.secrets/env/`: имя файла = имя переменной, содержимое — одна строка со значением (с переводом строки в конце или без — оба варианта работают).
 
-При каждом открытии shell скрипт `env.zsh` автоматически получает ключи из Vault и кэширует их в `~/.cache/openrouter.token` (TTL 7 дней). Если Vault недоступен (не дома / нет VPN / запечатан) — используется кэш.
+```sh
+mkdir -p ~/.secrets/env
+chmod 700 ~/.secrets/env
+printf '%s' 'значение' > ~/.secrets/env/ИМЯ_ПЕРЕМЕННОЙ
+chmod 600 ~/.secrets/env/*
+```
 
-### Первичная настройка
+Переопределение каталога: `ENV_SECRETS_DIR`.
 
-1. Убедиться, что Vault запущен и распечатан (`vault_unseal`).
-2. Войти: `vault login`.
-3. Положить ключ OpenRouter:
-   ```
-   vault kv put kv/openrouter api_key='sk-or-v1-...'
-   ```
-4. Открыть новый shell — ключ подхватится автоматически.
+### Work (`~/yandex` есть)
 
-### Обновление ключа
+Типичные файлы:
+
+- `ANTHROPIC_AUTH_TOKEN`
+- `ELIZA_TOKEN`
+- `PAID_NPM_PACKAGE_REGISTRY_TOKEN`
+- `TANKER_API_TOKEN`
+
+`ANTHROPIC_BASE_URL` для Eliza задаётся в `secrets.zsh` (не в файлах).
+
+### Home (`~/yandex` нет)
+
+Типичные файлы:
+
+- `OPENROUTER_API_KEY`
+- `ANTHROPIC_AUTH_TOKEN` (если нужен тот же ключ, что и для OpenRouter)
+
+`ANTHROPIC_BASE_URL` для OpenRouter задаётся в `secrets.zsh`.
+
+### HashiCorp Vault (только home)
+
+Распечатка личного Vault — отдельно от env-файлов: `vault_unseal` в `home.zsh`, ключи в `~/.secrets/vault.json`. После миграции с `env.zsh` ключ OpenRouter в Vault можно не использовать для shell; достаточно файла `~/.secrets/env/OPENROUTER_API_KEY`.
+
+### Обновление ключа в текущем shell
 
 ```
-vault kv put kv/openrouter api_key='sk-or-v1-новый-ключ'
-load_openrouter_key  # обновить в текущем shell без перезапуска
+# отредактировать файл, затем:
+load_env_secrets
 ```
+
+### Ротация
+
+Если токены когда-либо попадали в git — перевыпустить их в соответствующих сервисах.
 
 ## Atom
 

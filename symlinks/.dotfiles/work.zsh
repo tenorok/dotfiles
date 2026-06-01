@@ -1,9 +1,13 @@
-alias sdev="ssh tenorok-dev.klg.yp-c.yandex.net"
+alias sdev="ssh -o StrictHostKeyChecking=no tenorok-dev2.klg.yp-c.yandex.net"
 
 alias npmw="npm config set registry http://registry.npmjs.org"
 alias npmy="npm config set registry http://npm.yandex-team.ru"
 alias ynpm='npm --registry http://npm.yandex-team.ru'
 alias npm-yandex-deps='npm i --registry="http://npm.yandex-team.ru" && npm run deps --registry="http://npm.yandex-team.ru"'
+
+export NODE_EXTRA_CA_CERTS=/etc/ssl/certs/YandexInternalCA.pem
+
+alias opencode='NODE_EXTRA_CA_CERTS="$HOME/.config/opencode/YandexInternalRootCA.crt" npm_config_registry=https://npm.yandex-team.ru opencode'
 
 function kotik_dev() {
     local i="${1:-1}"
