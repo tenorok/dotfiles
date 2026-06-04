@@ -1,0 +1,26 @@
+# Базовый путь для worktrees (default: ~/arcadia-wt)
+worktrees_base_path: ~/arcadia-wt
+
+# Базовый путь для stores (default: ~/.arc/stores)
+stores_base_path: ~/.arc/stores
+
+# Путь к object store (default: ~/projects/arc_obj_store)
+object_store_path: ~/arcadia-wt-obj-store
+
+# Путь к trunk репозиторию (default: ~/arcadia)
+trunk_path: ~/arcadia
+
+# Дефолтный репозиторий для init (default: arcadia)
+default_repo: arcadia
+
+# Дефолтная базовая ветка (default: trunk)
+default_base: trunk
+
+# Дефолтный режим: init, mount, mount-shared (default: mount-shared)
+default_mode: mount-shared
+
+# хук для модификации npm_config_virtual_store_dir и открытия маунта в vscode
+post_create_hook: |
+  hash=$(printf '%s' "$ARC_WT_PATH/search-interfaces/oceania" | shasum | cut -c1-6)
+  printf 'export npm_config_virtual_store_dir=$HOME/.pnpm-store/oceania-virtual-store-%s\n' "$hash" > "$ARC_WT_PATH/search-interfaces/oceania/.envrc"
+  direnv allow "$ARC_WT_PATH/search-interfaces/oceania"

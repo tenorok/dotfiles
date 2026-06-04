@@ -20,6 +20,19 @@ for src in symlinks/*; do
     ln -sfn "$target" "$dest"
 done
 
+# arc читает ~/.arc/arc-wt.yaml; каноническая копия — в ~/.dotfiles/.arc/
+arc_wt_src="$DOTFILES_DIR/symlinks/.dotfiles/.arc/arc-wt.yaml"
+arc_wt_dest="$HOME/.arc/arc-wt.yaml"
+mkdir -p "$HOME/.arc"
+if [[ -e "$arc_wt_dest" || -L "$arc_wt_dest" ]]; then
+    if [[ "$(readlink "$arc_wt_dest")" != "$arc_wt_src" ]]; then
+        mkdir -p "$BACKUP_DIR/.arc"
+        mv "$arc_wt_dest" "$BACKUP_DIR/.arc/arc-wt.yaml"
+        echo "Backed up ~/.arc/arc-wt.yaml → $BACKUP_DIR/.arc/arc-wt.yaml"
+    fi
+fi
+ln -sfn "$arc_wt_src" "$arc_wt_dest"
+
 shopt -u dotglob nullglob
 
 # git-completion для zsh: обёртка + bash-источник

@@ -132,3 +132,89 @@ function arcprune {
     arc pull -r
     arc branch --merged | grep -v trunk | xargs -L 1 arc branch -d
 }
+
+_wt_worktrees_base() {
+  local config="$HOME/.arc/arc-wt.yaml" base
+  if [[ -f "$config" ]]; then
+    base="$(grep -E '^worktrees_base_path:' "$config" | sed -E 's/^worktrees_base_path:[[:space:]]*//' | tr -d \"\'\" | head -1)"
+    if [[ -n "$base" ]]; then
+      print -r -- "${base/#\~/$HOME}"
+      return
+    fi
+  fi
+  print -r -- "$HOME/arcadia-wt"
+}
+
+_wt_add_has_custom() {
+  for arg in "${@:2}"; do
+    case "$arg" in
+      --name|--name=*|--path|--path=*) return 0 ;;
+    esac
+  done
+  return 1
+}
+
+_wt_add_branch() {
+  local skip=false branch=""
+  for arg in "${@:2}"; do
+    if $skip; then
+      skip=false
+      continue
+    fi
+    case "$arg" in
+      --name|--mode|--repo|--path|--base|--store-path|--object-store-path)
+        skip=true
+        ;;
+      --name=*|--mode=*|--repo=*|--path=*|--base=*|--store-path=*|--object-store-path=*)
+        ;;
+      --*|-*)
+        ;;
+      *)
+        branch="$arg"
+        ;;
+    esac
+  done
+  print -r -- "$branch"
+}
+
+wt() {
+  local oceania=false
+  local -a wt_args stripped
+  for arg in "$@"; do
+    if [[ "$arg" == "--oceania" ]]; then
+      oceania=true
+    else
+      stripped+=("$arg")
+    fi
+  done
+  wt_args=("${stripped[@]}")
+
+  if [[ "$1" == "add" ]] && ! _wt_add_has_custom "$@"; then
+    local branch task_key wt_base
+    branch="$(_wt_add_branch "$@")"
+    if [[ -n "$branch" && "$branch" == *.* ]]; then
+      task_key="${branch##*.}"
+      wt_base="$(_wt_worktrees_base)"
+      wt_args=(add --name "$task_key" --path "$wt_base/$task_key" "${wt_args[@]:1}")
+    fi
+  fi
+
+  if $oceania && [[ "${wt_args[1]}" == "add" ]] && [[ " ${wt_args[*]} " != *" --cd "* ]]; then
+    wt_args=(add --cd "${wt_args[@]:1}")
+  fi
+
+  if [[ "${wt_args[1]}" == "cd" || ( "${wt_args[1]}" == "add" && " ${wt_args[*]} " == *" --cd "* ) ]]; then
+    local dir output
+    output="$(command wt "${wt_args[@]}")" || return
+    dir="${output##*$'\n'}"
+    if $oceania; then
+      dir="$dir/search-interfaces/oceania"
+    fi
+    builtin cd "$dir" || return
+    if $oceania; then
+      pnpm install
+    fi
+  else
+    command wt "${wt_args[@]}"
+  fi
+}
