@@ -30,3 +30,8 @@ export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist/
 typeset -U path PATH
 path=(./bin node_modules/.bin $HOME/bin $path $GOPATH/bin $HOME/.local/bin)
 export ORIGINAL_PATH=$PATH
+
+# work
+if [[ -d ~/yandex ]]; then
+  export YA_CACHE_DIR=/tmp/ya_tool_cache/$(whoami)
+fi
