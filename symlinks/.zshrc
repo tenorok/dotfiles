@@ -57,6 +57,3 @@ include $HOME/.rvm/scripts/rvm
 
 # Completions
 include $DOTFILES/completions.zsh
-
-# Secrets / API-ключи (после brew/PATH)
-include $DOTFILES/secrets.zsh

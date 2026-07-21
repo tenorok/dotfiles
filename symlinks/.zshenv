@@ -35,3 +35,6 @@ export ORIGINAL_PATH=$PATH
 if [[ -d ~/yandex ]]; then
   export YA_CACHE_DIR=/tmp/ya_tool_cache/$(whoami)
 fi
+
+# Secrets / API-ключи (нужны и в неинтерактивном zsh)
+[[ -f $DOTFILES/secrets.zsh ]] && source $DOTFILES/secrets.zsh
