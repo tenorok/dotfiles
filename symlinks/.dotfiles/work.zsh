@@ -56,7 +56,11 @@ function p_clean {
 }
 
 function web4_clean {
+    cd ../../
     arc cleanup
+    pnpm install
+    arc checkout -- pnpm-lock.yaml
+    cd -
     arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
     pnpm run deps
     pnpm run build
@@ -83,7 +87,12 @@ function inspire_clean {
 }
 
 function alice_clean {
+    cd ../../
     arc cleanup
+    pnpm clean:vstore
+    pnpm install
+    arc checkout -- pnpm-lock.yaml
+    cd -
     arc prefetch-files . --filter '**/*.js' --filter '**/*.jsx' --filter '**/*.ts' --filter '**/*.tsx' --filter '**/*.css' --filter '**/*.scss'
     pnpm deps
     pnpm build
@@ -110,15 +119,7 @@ function arc_clean {
 function arc_mount {
     cd ~/
 
-    arc mount --mount arcadia/ --store store/ --object-store objects/
-    arc mount --mount arcadia2/ --store store2/ --object-store objects/
-    arc mount --mount arcadia3/ --store store3/ --object-store objects/
-    arc mount --mount arcadia4/ --store store4/ --object-store objects/
-    arc mount --mount arcadia5/ --store store5/ --object-store objects/
-
-    # Сборка MCP-серверов
-    # Docs
-    ~/arcadia/ya make -r ~/arcadia/junk/amikita/mcp/docs
+    arc mount --mount arcadia/ --store arcadia-store/ --object-store arcadia-objects/
 
     cd -
 }
