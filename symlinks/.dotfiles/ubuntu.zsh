@@ -10,9 +10,11 @@ if [[ -z "$SSH_AUTH_SOCK" ]]; then
   eval $(cat .ssh/ssh-agent)
 fi
 
-# NVM
+# NVM — EXTENDED_GLOB ломает nvm_alias (#* → bad pattern)
+setopt NO_EXTENDED_GLOB
 source $NVM_DIR/nvm.sh
 source $NVM_DIR/bash_completion 2>/dev/null || true
+setopt EXTENDED_GLOB
 
 # Автоматически использовать версию Node из .nvmrc при старте shell
 nvm_use

@@ -23,7 +23,7 @@ export APPLICATIONS=(
     telegram-desktop
     whatsapp
     zoom
-    chromium
+    ungoogled-chromium
     vivaldi
     yandex-disk
     dropbox
